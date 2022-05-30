@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="IkU-MW-dX9">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Portal" translatesAutoresizingMaskIntoConstraints="NO" id="NLM-1g-gUP">
+                                <rect key="frame" x="0.0" y="246" width="414" height="414"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="NLM-1g-gUP" secondAttribute="height" multiplier="1:1" id="sg8-C1-CVD"/>
+                                </constraints>
+                            </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="RickAndMortyText" translatesAutoresizingMaskIntoConstraints="NO" id="MmE-Aq-Eb4">
+                                <rect key="frame" x="0.0" y="104" width="414" height="134"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="MmE-Aq-Eb4" secondAttribute="height" multiplier="207:94" constant="118.91489361702128" id="0q1-No-mhQ"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Hgn-2E-T6I"/>
+                        <color key="backgroundColor" name="background"/>
+                        <constraints>
+                            <constraint firstItem="NLM-1g-gUP" firstAttribute="top" secondItem="MmE-Aq-Eb4" secondAttribute="bottom" constant="8" symbolic="YES" id="HaS-0m-TB2"/>
+                            <constraint firstItem="NLM-1g-gUP" firstAttribute="leading" secondItem="Hgn-2E-T6I" secondAttribute="leading" id="IJY-hK-Nwf"/>
+                            <constraint firstItem="NLM-1g-gUP" firstAttribute="centerY" secondItem="Hgn-2E-T6I" secondAttribute="centerY" id="Z7O-mO-b0w"/>
+                            <constraint firstItem="MmE-Aq-Eb4" firstAttribute="trailing" secondItem="Hgn-2E-T6I" secondAttribute="trailing" id="hQ3-GU-P0P"/>
+                            <constraint firstItem="NLM-1g-gUP" firstAttribute="trailing" secondItem="Hgn-2E-T6I" secondAttribute="trailing" id="khI-sH-v5f"/>
+                            <constraint firstItem="MmE-Aq-Eb4" firstAttribute="leading" secondItem="Hgn-2E-T6I" secondAttribute="leading" id="qJZ-RX-WKI"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="98"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Portal" width="1190" height="1185"/>
+        <image name="RickAndMortyText" width="1280" height="544"/>
+        <namedColor name="background">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
+</document>

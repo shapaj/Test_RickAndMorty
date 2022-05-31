@@ -6,3 +6,11 @@
 //
 
 import Foundation
+
+protocol CharacterNetworkServiceProtocol {
+    
+}
+
+struct CharacterNetworkService: CharacterNetworkServiceProtocol {
+    
+}

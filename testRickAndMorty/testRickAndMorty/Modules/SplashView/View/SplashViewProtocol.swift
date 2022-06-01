@@ -5,4 +5,8 @@
 //  Created by anduser on 31.05.2022.
 //
 
-import Foundation
+import UIKit
+
+protocol SplashViewProtocol: UIViewController, SplashRouterProtocol {
+    
+}

@@ -6,3 +6,16 @@
 //
 
 import Foundation
+import UIKit
+
+struct SplashViewAssembly {
+    
+    static func createModule() -> SplashViewController {
+     
+        let viewController = SplashViewController()
+        
+        viewController.presenter = SplashPresenter(view: viewController, networkService: CharacterNetworkService())
+        
+        return viewController
+    }
+}

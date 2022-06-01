@@ -10,7 +10,7 @@ import Foundation
 final class LocationsPresenter: LocationsPresenterProtocol {
     
     private weak var view: LocationsViewProtocol!
-    private var networkService: LocationNetworkService
+    private var networkService: LocationNetworkServiceProtocol
     
     init(view: LocationsViewProtocol, networkService: LocationNetworkService) {
         self.view = view

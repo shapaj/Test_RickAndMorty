@@ -10,4 +10,7 @@ import UIKit
 
 final class EpisodesViewController: UIViewController, EpisodesViewProtocol {
     
+    var presenter: EpisodesPresenterProtocol!
+    
+    
 }

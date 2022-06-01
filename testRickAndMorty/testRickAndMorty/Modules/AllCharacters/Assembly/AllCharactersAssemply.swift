@@ -11,37 +11,23 @@ struct AllCharactersAssembly {
     
     static func createModule() -> AllCharactersViewController {
         let viewController = AllCharactersViewController()
-        
+        viewController.presenter = AllCharactersPresenter(view: viewController,
+                                                          networkService: CharacterNetworkService())
         
         
         return viewController
     }
     
-}
-
-final class AllCharactersViewController: UIViewController, AllCharactersViewProtocol {
-    var presenter: AllCharactersPresenterProtocol!
-    
-}
-
-protocol AllCharactersViewProtocol: UIViewController, AllCharactersRouter {
-    
-}
-
-protocol AllCharactersRouter {
-    
-}
-
-final class AllCharactersPresenter: AllCharactersPresenterProtocol {
-    private weak var view: AllCharactersViewProtocol!
-    private var networkService: CharacterNetworkService
-    
-    init(view: AllCharactersViewProtocol!, networkService: CharacterNetworkService) {
-        self.view = view
-        self.networkService = networkService
+    static func tabBarViewController() -> UIViewController {
+        
+        let tabbarItem = UITabBarItem(title: InterfaceStrings.characters.rawValue,
+                                      image: Images.charactersIcon,
+                                      selectedImage: Images.charactersIcon)
+        
+        let navigationController = UINavigationController(rootViewController: createModule())
+        navigationController.isNavigationBarHidden = true
+        navigationController.tabBarItem = tabbarItem
+        
+        return navigationController
     }
-}
-
-protocol AllCharactersPresenterProtocol {
-    
 }

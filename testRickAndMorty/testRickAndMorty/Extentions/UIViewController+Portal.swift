@@ -22,14 +22,17 @@ extension UIViewController {
         
         self.view.addSubview(portal)
         
-        UIView.animateKeyframes(withDuration: 5, delay: 0, options: [], animations: {
-            portal.bounds.size.height *= 0.8
-            portal.bounds.size.width *= 0.8
+        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn], animations: {
+            portal.bounds.size.height *= 2.0
+            portal.bounds.size.width *= 2.0
+            
+//            let rotation = rotat
+            portal.layer.transform = CATransform3DMakeRotation(.pi, 0, 0, 1)
         }, completion: { _ in NavigationManager.shared.presentTabViewController() } )
+    
+        let animation = CAAnimation()
         
         
-
-        
-        
+//        portal.layer.add
     }
 }

@@ -59,7 +59,7 @@ final class NavigationManager {
         itemAppearance.normal.iconColor = Colors.darkGreen
         itemAppearance.normal.titleTextAttributes = [.foregroundColor: UIColor.white as Any]
         
-        itemAppearance.selected.iconColor = UIColor.white
-        itemAppearance.selected.titleTextAttributes = [.foregroundColor: Colors.darkGreen as Any]
+        itemAppearance.selected.iconColor = Colors.darkGreen
+        itemAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white as Any]
     }
 }

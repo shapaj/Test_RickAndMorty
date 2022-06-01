@@ -7,6 +7,6 @@
 
 import Foundation
 
-struct CharacterViewModel {
+struct CharacterViewModel{
     
 }

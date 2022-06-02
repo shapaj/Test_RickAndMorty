@@ -22,7 +22,7 @@ extension UIViewController {
         
         self.view.addSubview(portal)
         
-        UIView.animate(withDuration: 2, delay: 0, options: [.curveEaseIn], animations: {
+        UIView.animate(withDuration: 0.5, delay: 0, options: [.curveEaseIn], animations: {
             portal.bounds.size.height *= 2.0
             portal.bounds.size.width *= 2.0
             

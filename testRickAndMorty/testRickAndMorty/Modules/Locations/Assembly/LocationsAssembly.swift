@@ -22,7 +22,7 @@ struct LocationsAssembly {
     static func tabBarViewController() -> UIViewController {
         let tabbarItem = UITabBarItem(title: InterfaceStrings.locations.rawValue,
                                       image: Images.locationsIcon,
-                                      selectedImage: Images.epsodesIcon)
+                                      selectedImage: Images.locationsIcon)
         
         let navigationController = UINavigationController(rootViewController: createModule())
         navigationController.isNavigationBarHidden = true

@@ -60,7 +60,7 @@ class CharacterViewCell: UITableViewCell {
         }
         
         contentView.addSubview(status)
-        status.tintColor = Colors.darkGreen
+        status.backgroundColor = UIColor.clear
         status.snp.makeConstraints { make in
             make.left.equalTo(image.snp.right).inset(-8)
             make.top.equalTo(episodes.snp.bottom).inset(8)
@@ -68,7 +68,6 @@ class CharacterViewCell: UITableViewCell {
             make.bottom.equalToSuperview().inset(5)
             make.height.equalTo(5)
         }
-        
     }
     
     override func prepareForReuse() {
@@ -91,6 +90,7 @@ class CharacterViewCell: UITableViewCell {
         name.text = viewModel.name
         episodes.text = viewModel.episodes
         status.progress = viewModel.progressValue
+        status.tintColor = viewModel.progressTintColor
         
         if let url =  viewModel.imageURL {
             let queue = OperationQueue()

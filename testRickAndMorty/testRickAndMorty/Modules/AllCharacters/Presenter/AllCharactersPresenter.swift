@@ -26,6 +26,12 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
         }
     }
     
+    func tableViewdidSelectRowAt(_ indexPath: IndexPath) {
+        guard let character = model?.results[indexPath.row] else { return }
+        
+        view.presentCharacterView(character: character)
+    }
+    
     func getNextCharacters() {
         networkService.getCharacters(page: model?.info.next) { [weak self] result in
             switch result {
@@ -43,6 +49,7 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
             self?.view.updateInterface(viewModel: AllCharactersViewModel(charactersModel: model).characterCells)
         }
     }
+    
     
     
 }

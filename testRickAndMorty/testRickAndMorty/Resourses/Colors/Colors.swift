@@ -9,6 +9,8 @@ import UIKit
 
 struct Colors {
     static let darkGreen = UIColor(named: "darkGreen")
+    static let darkRed = UIColor(named: "darkRed")
+    static let darkOrange = UIColor(named: "darkOrange")
     static let background = UIColor(named: "background")
     static let lightGreen = UIColor(named: "lightGreen")
     

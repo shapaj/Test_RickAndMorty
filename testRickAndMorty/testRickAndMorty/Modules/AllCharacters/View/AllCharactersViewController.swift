@@ -15,34 +15,6 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
     
     let imageView = UIImageView()
     
-    private var navigationBar: UINavigationBar {
-        let navigationBar = UINavigationBar()
-//
-//        view.addSubview(navigationBar)
-//
-//        navigationBar.snp.makeConstraints { make in
-//            make.top.equalTo(view.safeAreaLayoutGuide)
-//            make.left.equalToSuperview().inset(8)
-//            make.right.equalToSuperview().inset(8)
-//            make.height.equalTo(44)
-//        }
-        
-        
-        
-//        let view1 = UIView(frame: CGRect(x: 0, y: 0, width: view.bounds.width, height: 44))
-//        view1.backgroundColor = UIColor.blue
-////        view.addSubview(view1)
-////        view1.snp.makeConstraints { make in
-////                    make.top.equalTo(view.safeAreaLayoutGuide)
-////                    make.left.equalToSuperview().inset(8)
-////                    make.right.equalToSuperview().inset(8)
-////                    make.height.equalTo(44)
-////                }
-//        self.navigationItem.titleView = view1
-       
-        return navigationBar
-    }
-    
     private var tableView: UITableView = UITableView()
     
     override func viewDidLoad() {
@@ -50,16 +22,11 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
         presenter.viewDidLoad()
         setupUI()
         view.backgroundColor = Colors.background
-
-
-        
-        
     }
     
     
-    override func viewWillAppear(_ animated: Bool) {
-        
-    }
+    override func viewWillAppear(_ animated: Bool) { }
+    
     private func setupUI() {
         setupTable()
     }
@@ -94,6 +61,12 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
         self.viewModel = viewModel
         tableView.reloadData()
     }
+    
+    func presentCharacterView(character: Character) {
+        let characterView = CharacterAssembly.createModule()
+        characterView.modalPresentationStyle = .fullScreen
+        navigationController?.present(characterView, animated: true)
+    }
 }
 
 extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSource {
@@ -104,6 +77,10 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return CGFloat(80)
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.tableViewdidSelectRowAt(indexPath)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

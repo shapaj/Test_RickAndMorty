@@ -9,4 +9,5 @@ import Foundation
 
 protocol AllCharactersPresenterProtocol {
     func viewDidLoad()
+    func tableViewdidSelectRowAt(_ indexPath: IndexPath)
 }

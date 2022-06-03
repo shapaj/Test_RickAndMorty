@@ -17,7 +17,6 @@
 		CA6F53DE2844DE9D002093C4 /* CharacterNetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53DD2844DE9D002093C4 /* CharacterNetworkService.swift */; };
 		CA6F53E02844DEB3002093C4 /* CharactersModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53DF2844DEB3002093C4 /* CharactersModel.swift */; };
 		CA6F53E52844DF2D002093C4 /* CharacterCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53E32844DF2D002093C4 /* CharacterCell.swift */; };
-		CA6F53E62844DF2D002093C4 /* CharacterCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CA6F53E42844DF2D002093C4 /* CharacterCell.xib */; };
 		CA6F53E92844E107002093C4 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53E82844E107002093C4 /* NetworkManager.swift */; };
 		CA6F53EB2844E121002093C4 /* NavigationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53EA2844E121002093C4 /* NavigationManager.swift */; };
 		CA6F53EE2844F9C0002093C4 /* Endpoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F53ED2844F9C0002093C4 /* Endpoint.swift */; };
@@ -80,7 +79,6 @@
 		CA6F53DD2844DE9D002093C4 /* CharacterNetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterNetworkService.swift; sourceTree = "<group>"; };
 		CA6F53DF2844DEB3002093C4 /* CharactersModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharactersModel.swift; sourceTree = "<group>"; };
 		CA6F53E32844DF2D002093C4 /* CharacterCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterCell.swift; sourceTree = "<group>"; };
-		CA6F53E42844DF2D002093C4 /* CharacterCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CharacterCell.xib; sourceTree = "<group>"; };
 		CA6F53E82844E107002093C4 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		CA6F53EA2844E121002093C4 /* NavigationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationManager.swift; sourceTree = "<group>"; };
 		CA6F53ED2844F9C0002093C4 /* Endpoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Endpoint.swift; sourceTree = "<group>"; };
@@ -293,7 +291,6 @@
 			isa = PBXGroup;
 			children = (
 				CA6F53E32844DF2D002093C4 /* CharacterCell.swift */,
-				CA6F53E42844DF2D002093C4 /* CharacterCell.xib */,
 				CA6F5409284617F0002093C4 /* CharacterCellViewModel.swift */,
 			);
 			path = CharacterViewCell;
@@ -601,7 +598,6 @@
 			files = (
 				CA6F53C02844AB3E002093C4 /* LaunchScreen.storyboard in Resources */,
 				CA6F53BD2844AB3E002093C4 /* Assets.xcassets in Resources */,
-				CA6F53E62844DF2D002093C4 /* CharacterCell.xib in Resources */,
 				CA6F53BB2844AB3C002093C4 /* SplashView.storyboard in Resources */,
 				CA6F53D52844C74D002093C4 /* NamedColors.xcassets in Resources */,
 			);
@@ -812,6 +808,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKSA8N6KS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = testRickAndMorty/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -838,8 +835,10 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = AKSA8N6KS7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = testRickAndMorty/Resourses/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -854,6 +853,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = shapaj.testRickAndMorty;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";

@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CharactersModel: Codable {
     
@@ -42,7 +43,7 @@ struct Character: Codable {
     let status: CharacterStatus // make enum
     let species: String
     let type: String    // make enum
-    let gender: String // make enum
+    let gender: CharactersGender // make enum
     let origin: Location
     let location: Location
     let image: String
@@ -55,6 +56,13 @@ struct Character: Codable {
         let url: String
     }
     
+    enum CharactersGender: String, Codable {
+        case Female = "Female"
+        case Male = "Male"
+        case Genderless = "Genderless"
+        case unknown = "unknown"
+    }
+    
     enum CharacterStatus: String, Codable {
         case alive = "Alive"
         case dead = "Dead"
@@ -65,9 +73,20 @@ struct Character: Codable {
             case .alive:
                 return Float(1)
             case .dead:
-                return Float(0)
+                return Float(0.05)
             case .unknown:
                 return Float(0.5)
+            }
+        }
+        
+        var progressTintColor: UIColor? {
+            switch self {
+            case .alive:
+                return Colors.darkGreen
+            case .dead:
+                return Colors.darkRed
+            case .unknown:
+                return Colors.darkOrange
             }
         }
     }

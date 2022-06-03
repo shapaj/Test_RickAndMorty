@@ -24,4 +24,13 @@ enum Endpoint: String {
         
         return urlComponents.url
     }
+    
+    static func getEpisodes(character: Character) -> String {
+      
+        return character.episode.map {
+             $0.replacingOccurrences(of: "https://rickandmortyapi.com/api/episode/", with: "")
+        } .joined(separator: ",")
+        
+        
+    }
 }

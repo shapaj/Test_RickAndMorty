@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol AllCharactersRouterProtocol {
-    
+protocol AllCharactersRouterProtocol {   
+    func presentCharacterView(character: Character)
 }

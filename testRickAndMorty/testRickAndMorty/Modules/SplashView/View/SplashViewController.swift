@@ -17,6 +17,7 @@ final class SplashViewController: UIViewController, SplashViewProtocol {
         super.viewDidLoad()
         
         view.backgroundColor = Colors.background
+        presenter.getCharacters()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -25,15 +26,13 @@ final class SplashViewController: UIViewController, SplashViewProtocol {
     
     // MARK: SplashRouterProtocol
     
-    func presentHomeSctreen() {
+    func presentHomeSctreen(charactersModel: CharactersModel? ) {
         
         
         
         let queue = OperationQueue.main
         queue.addOperation {
-
-//        DispatchQueue.main.async {
-        NavigationManager.shared.presentTabViewController()
+            NavigationManager.shared.presentTabViewController(charactersModel: charactersModel)
         }
         
 

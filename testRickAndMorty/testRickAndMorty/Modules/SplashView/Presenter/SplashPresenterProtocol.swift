@@ -9,4 +9,5 @@ import Foundation
 
 protocol SplashPresenterProtocol {
     func presentHomeSctreen()
+    func getCharacters()
 }

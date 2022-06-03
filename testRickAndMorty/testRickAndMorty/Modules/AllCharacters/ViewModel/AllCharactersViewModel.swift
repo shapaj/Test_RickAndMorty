@@ -6,12 +6,13 @@
 //
 
 import Foundation
+import UIKit
 
 struct AllCharactersViewModel {
     var characterCells: [CharacterCellViewModel]
     
-    
     init(charactersModel: CharactersModel) {
-        characterCells = []
+        
+        characterCells = charactersModel.results.map {  CharacterCellViewModel(model: $0) }
     }
 }

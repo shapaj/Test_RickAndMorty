@@ -12,24 +12,22 @@ final class NavigationManager {
     
     static let shared: NavigationManager = NavigationManager()
     
-    
-    func presentTabViewController() {
-        
+    func presentTabViewController(charactersModel: CharactersModel? = nil) {
         let keyWindow = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})
             .compactMap({$0 as? UIWindowScene})
             .first?.windows
             .filter({$0.isKeyWindow}).first
         
-        keyWindow?.rootViewController = tabBarController() 
+        keyWindow?.rootViewController = tabBarController(charactersModel: charactersModel)
         
     }
     
-    func tabBarController() -> UITabBarController {
+    func tabBarController(charactersModel: CharactersModel? = nil) -> UITabBarController {
         let tabBarController = UITabBarController()
         
         let tabBarViewControllers: [UIViewController] = [
-            AllCharactersAssembly.tabBarViewController(),
+            AllCharactersAssembly.tabBarViewController(charactersModel: charactersModel),
             EpisodesAssembly.tabBarViewController(),
             LocationsAssembly.tabBarViewController()
         ]

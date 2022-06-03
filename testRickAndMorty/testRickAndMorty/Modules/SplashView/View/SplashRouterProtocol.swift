@@ -8,5 +8,5 @@
 import Foundation
 
 protocol SplashRouterProtocol {
-    func presentHomeSctreen()
+    func presentHomeSctreen(charactersModel: CharactersModel?)
 }

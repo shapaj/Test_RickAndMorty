@@ -17,10 +17,27 @@ final class SplashPresenter: SplashPresenterProtocol {
     }
     
     // MARK: SplashPresenterProtocol
+    
+    func getCharacters() {
+        
+        networkService.getCharacters(page: nil) { [weak self] result in
+            
+            defer {
+                OperationQueue.main.addOperation { self?.view.hidePortal() }
+            }
+            
+            switch result {
+            case .failure(let error): 
+                print(error.localizedDescription)
+                self?.view.presentHomeSctreen(charactersModel: nil)
+            case .success(let charactersModel):
+                sleep(1)
+                self?.view.presentHomeSctreen(charactersModel: charactersModel)
+            }
+        }
+    }
+    
     func presentHomeSctreen() {
-        
         view.showPortal()
-        
-//        view.presentHomeSctreen()
     }
 }

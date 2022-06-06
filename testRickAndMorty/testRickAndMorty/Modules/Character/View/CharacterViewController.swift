@@ -8,11 +8,11 @@
 import UIKit
 import SnapKit
 
-final class CharacterViewController: UIViewController, CharacterViewProtocol {
+final class CharacterViewController: UIViewController, CharacterViewProtocol, CommonNavigationBarDelegate {
     
     var presenter: CharacterPresenterProtocol!
     
-    private let navigationBar: UINavigationBar = UINavigationBar()
+    private var navigationBar: CommonNavigationBar!
     private let scrollView: UIScrollView = UIScrollView()
     private let scrollContentView: UIView = UIView()
     private let image: UIImageView = UIImageView()
@@ -20,29 +20,36 @@ final class CharacterViewController: UIViewController, CharacterViewProtocol {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = UIColor.lightGray
-        image.image = UIImage(named: "Portal")
         setupUI()
-    }
-    
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
     }
     
     private func setupUI() {
         
+        view.backgroundColor = Colors.background
+        setupNavigationBar()
+        setupImage()
+        setupScrollView()
+        setupcontentView()
+        setupTable()
+    }
+    
+    private func setupNavigationBar() {
+        navigationBar = CommonNavigationBar(model: CommonNavigationBarModel.mock())
+        navigationBar.delegate = self
         view.addSubview(navigationBar)
         navigationBar.backgroundColor = UIColor.orange
+//        let leftButton = UINavigationItem(title: InterfaceStrings.Back.rawValue)
+//        let rightButton = UINavigationItem(title: InterfaceStrings.Back.rawValue)
+        
+//        navigationBar.setItems(T##items: [UINavigationItem]?##[UINavigationItem]?, animated: T##Bool)
         navigationBar.snp.makeConstraints { make in
             make.top.equalTo(view.safeAreaLayoutGuide)
-            make.left.equalToSuperview().inset(8)
-            make.right.equalToSuperview().inset(8)
+            make.left.right.equalToSuperview().inset(8)
             make.height.equalTo(44)
         }
-        setupImage()
-        
-        
+    }
+    
+    private func setupScrollView() {
         scrollView.backgroundColor = UIColor.yellow
         scrollView.alpha = 0.3
         view.addSubview(scrollView)
@@ -50,9 +57,6 @@ final class CharacterViewController: UIViewController, CharacterViewProtocol {
             make.top.equalTo(navigationBar.snp.bottom)
             make.left.right.bottom.equalToSuperview()
         }
-        
-        setupcontentView()
-        setupTable()
     }
     
     private func setupcontentView() {
@@ -64,32 +68,19 @@ final class CharacterViewController: UIViewController, CharacterViewProtocol {
             make.top.bottom.equalToSuperview()
             make.width.equalToSuperview().offset(-16)
             make.left.right.equalToSuperview().inset(8)
-            //            make.right.equalToSuperview().inset(8)
-            
             make.height.equalTo(view.bounds.height / 4 + CGFloat(view.bounds.height * 6/8))
-        }
-        let title = UILabel()
-        title.text = "dsknbvfldk j fivsd gkls d  fdvd gds gsd ds gsd gds gg sd  dzg sgg s gsglgdj"
-        title.lineBreakMode = .byCharWrapping
-        scrollContentView.addSubview(title)
-        
-        title.snp.makeConstraints { make in
-            make.top.equalToSuperview()
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
         }
     }
     
     private func setupImage() {
         view.addSubview(image)
-        
+        image.image = Images.portal
+        image.contentMode = .scaleAspectFit
         image.snp.makeConstraints { make in
             make.top.equalTo(navigationBar.snp.bottom)
-            make.left.equalToSuperview()
-            make.right.equalToSuperview()
+            make.left.right.equalToSuperview()
             make.height.equalTo(view.bounds.height / 4)
         }
-        image.contentMode = .scaleAspectFit
     }
     
     private func setupTable() {
@@ -103,6 +94,26 @@ final class CharacterViewController: UIViewController, CharacterViewProtocol {
             make.right.equalToSuperview()
             make.height.equalTo(view.bounds.height * 6 / 8)
         }
+    }
+    
+    // MARK: CommonNavigationBarDelegate
+    func navigationBarLeftButton() {
+        
+        // go back
+        OperationQueue.main.addOperation {
+            self.dismiss(animated: true)
+        }
+    }
+    
+}
+
+extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        5
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        return UITableViewCell()
     }
 }
 

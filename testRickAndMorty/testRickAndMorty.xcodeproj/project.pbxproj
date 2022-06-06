@@ -64,6 +64,9 @@
 		CA6F54592846695B002093C4 /* UIViewController+Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F54582846695B002093C4 /* UIViewController+Portal.swift */; };
 		CA6F547B28476F35002093C4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA6F547A28476F35002093C4 /* SnapKit */; };
 		CA6F547E28476F5A002093C4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CA6F547D28476F5A002093C4 /* Nuke */; };
+		CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */; };
+		CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */; };
+		CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F776284DE89600876160 /* CommonNavigationBar.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -124,6 +127,9 @@
 		CA6F545428466615002093C4 /* SplashViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewProtocol.swift; sourceTree = "<group>"; };
 		CA6F54562846675F002093C4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CA6F54582846695B002093C4 /* UIViewController+Portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Portal.swift"; sourceTree = "<group>"; };
+		CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoSection.swift; sourceTree = "<group>"; };
+		CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCell.swift; sourceTree = "<group>"; };
+		CAC1F776284DE89600876160 /* CommonNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationBar.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -159,6 +165,7 @@
 		CA6F53B22844AB3C002093C4 /* testRickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
+				CAC1F775284DE87300876160 /* Views */,
 				CA6F53B32844AB3C002093C4 /* AppDelegate.swift */,
 				CA6F53B52844AB3C002093C4 /* SceneDelegate.swift */,
 				CA6F53C72844AE03002093C4 /* Modules */,
@@ -282,6 +289,8 @@
 		CA6F53E12844DEE1002093C4 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CAC1F772284A779B00876160 /* CharacterDetalInfoCell */,
+				CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */,
 				CA6F53E22844DEF9002093C4 /* CharacterViewCell */,
 			);
 			path = ReusableViews;
@@ -530,6 +539,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */,
+			);
+			path = CharacterDetalInfoSection;
+			sourceTree = "<group>";
+		};
+		CAC1F772284A779B00876160 /* CharacterDetalInfoCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */,
+			);
+			path = CharacterDetalInfoCell;
+			sourceTree = "<group>";
+		};
+		CAC1F775284DE87300876160 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F776284DE89600876160 /* CommonNavigationBar.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -640,11 +673,14 @@
 				CA6F54052846139E002093C4 /* AllCharactersAssemply.swift in Sources */,
 				CA6F542A28462C94002093C4 /* EpisodesNetworkService.swift in Sources */,
 				CA6F541D28462817002093C4 /* LocationNetworkService.swift in Sources */,
+				CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */,
 				CA6F543228462E59002093C4 /* EpisodesViewController.swift in Sources */,
 				CA6F541F28462840002093C4 /* LocationModel.swift in Sources */,
 				CA6F54572846675F002093C4 /* Colors.swift in Sources */,
 				CA6F544628465BF1002093C4 /* Images.swift in Sources */,
 				CA6F53B42844AB3C002093C4 /* AppDelegate.swift in Sources */,
+				CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */,
+				CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */,
 				CA6F543428462E6C002093C4 /* EpisodesViewProtocol.swift in Sources */,
 				CA6F53EB2844E121002093C4 /* NavigationManager.swift in Sources */,
 				CA6F53F628460958002093C4 /* CharacterAssembly.swift in Sources */,

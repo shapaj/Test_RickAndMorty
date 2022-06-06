@@ -11,6 +11,7 @@ enum InterfaceStrings: String {
     case characters = "Characters"
     case locations = "Locations"
     case epsodes = "Epsodes"
+    case Back = "Back"
     
     
     

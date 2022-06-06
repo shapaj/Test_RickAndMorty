@@ -9,6 +9,10 @@ import UIKit
 
 struct Images {
     static let charactersIcon: UIImage? = UIImage(named: "CharactersIcon")
+
     static let locationsIcon: UIImage? = UIImage(named: "LocationsIcon")
     static let epsodesIcon: UIImage? = UIImage(named: "EpisodesIcon")
+    
+    static let portal: UIImage? = UIImage(named: "Portal")
+    static let RickAndMortyText: UIImage? = UIImage(named: "RickAndMortyText")
 }

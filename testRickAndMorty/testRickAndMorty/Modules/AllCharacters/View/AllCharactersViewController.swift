@@ -34,7 +34,7 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
     private func setupTable() {
         
         imageView.contentMode = .scaleAspectFit
-        let image = UIImage(named: "RickAndMortyText")
+        let image = Images.RickAndMortyText
         imageView.image = image
         view.addSubview(imageView)
         

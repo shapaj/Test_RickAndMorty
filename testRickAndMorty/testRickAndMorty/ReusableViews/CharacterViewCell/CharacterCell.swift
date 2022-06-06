@@ -75,7 +75,7 @@ class CharacterViewCell: UITableViewCell {
     }
     
     private func clearElements() {
-        image.image = UIImage(named: "Portal")
+        image.image = Images.portal
         name.text = "name lorem ipsum"
         episodes.text = "episodes lorem ipsum"
         status.progress = 55

@@ -17,7 +17,7 @@ extension UIViewController {
         
         portal.center = self.view.center
         
-        portal.image = UIImage(named: "Portal")
+        portal.image = Images.portal
         
         
         self.view.addSubview(portal)

@@ -8,5 +8,5 @@
 import Foundation
 
 protocol CharacterRouterProtocol {
-    
+    func showPrevious()
 }

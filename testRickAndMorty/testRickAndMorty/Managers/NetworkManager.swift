@@ -67,26 +67,14 @@ final class NetworkManager {
         dataTask.resume()
     }
     
-    func getImage(by url: URL?, complitionHandler: @escaping (UIImage) -> Void) {
+    func getImage(by url: URL?, complitionHandler: @escaping (Data) -> Void) {
         guard let url = url else { return }
         
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: Constants.apiTimeoutInterval)
-        
-//        headers?.forEach {
-//            request.addValue($0.value, forHTTPHeaderField: $0.key)
-//        }
-//
-//        if let parametres = parametres {
-//            request.httpBody = try? JSONSerialization.data(withJSONObject: parametres)
-//        }
-        
+            
         let dataTask = URLSession.shared.dataTask(with: request) { data, response, responseError in
-            
-            
-            guard let data = data,
-                  let image = UIImage(data: data) else { return }
-            
-            complitionHandler(image)
+            guard let data = data else { return }
+            complitionHandler(data)
         }
         
         dataTask.resume()

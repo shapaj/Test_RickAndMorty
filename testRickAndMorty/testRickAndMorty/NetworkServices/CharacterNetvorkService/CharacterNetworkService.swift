@@ -9,6 +9,7 @@ import Foundation
 
 protocol CharacterNetworkServiceProtocol {
     func getCharacters(page: String?, complition: @escaping (Result<CharactersModel, Error>) -> ())
+    func getCharacterImage(by url: URL, complitionHandler: @escaping (Data) -> Void)
 }
 
 struct CharacterNetworkService: CharacterNetworkServiceProtocol {
@@ -18,5 +19,10 @@ struct CharacterNetworkService: CharacterNetworkServiceProtocol {
         guard let url = URL(string: page ?? "") ?? Endpoint.character.getURL(urlPaths: nil, queryItems: nil) else { return }
         
         NetworkManager.shared.getModel(url: url, headers: nil, parametres: nil, completionHandler: complition)
+    }
+    
+    func getCharacterImage(by url: URL, complitionHandler: @escaping (Data) -> Void) {
+        
+        NetworkManager.shared.getImage(by: url, complitionHandler: complitionHandler)
     }
 }

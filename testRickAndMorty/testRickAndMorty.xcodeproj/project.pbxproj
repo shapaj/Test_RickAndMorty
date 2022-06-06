@@ -67,6 +67,9 @@
 		CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */; };
 		CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */; };
 		CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F776284DE89600876160 /* CommonNavigationBar.swift */; };
+		CAC1F77A284E362F00876160 /* CharacterEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */; };
+		CAC1F77D284E7E9F00876160 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77C284E7E9F00876160 /* Nuke */; };
+		CAC1F780284E7EAF00876160 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77F284E7EAF00876160 /* SnapKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -130,6 +133,7 @@
 		CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoSection.swift; sourceTree = "<group>"; };
 		CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCell.swift; sourceTree = "<group>"; };
 		CAC1F776284DE89600876160 /* CommonNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationBar.swift; sourceTree = "<group>"; };
+		CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEpisodesCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -137,6 +141,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CAC1F77D284E7E9F00876160 /* Nuke in Frameworks */,
+				CAC1F780284E7EAF00876160 /* SnapKit in Frameworks */,
 				CA6F547B28476F35002093C4 /* SnapKit in Frameworks */,
 				CA6F547E28476F5A002093C4 /* Nuke in Frameworks */,
 			);
@@ -150,7 +156,6 @@
 			children = (
 				CA6F53B22844AB3C002093C4 /* testRickAndMorty */,
 				CA6F53B12844AB3C002093C4 /* Products */,
-				CA6F547428476BF5002093C4 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -289,6 +294,7 @@
 		CA6F53E12844DEE1002093C4 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CAC1F778284E35FC00876160 /* CharacterEpisodesCell */,
 				CAC1F772284A779B00876160 /* CharacterDetalInfoCell */,
 				CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */,
 				CA6F53E22844DEF9002093C4 /* CharacterViewCell */,
@@ -532,13 +538,6 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
-		CA6F547428476BF5002093C4 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -563,6 +562,14 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		CAC1F778284E35FC00876160 /* CharacterEpisodesCell */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */,
+			);
+			path = CharacterEpisodesCell;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -582,6 +589,8 @@
 			packageProductDependencies = (
 				CA6F547A28476F35002093C4 /* SnapKit */,
 				CA6F547D28476F5A002093C4 /* Nuke */,
+				CAC1F77C284E7E9F00876160 /* Nuke */,
+				CAC1F77F284E7EAF00876160 /* SnapKit */,
 			);
 			productName = testRickAndMorty;
 			productReference = CA6F53B02844AB3C002093C4 /* testRickAndMorty.app */;
@@ -614,6 +623,8 @@
 			packageReferences = (
 				CA6F547928476F35002093C4 /* XCRemoteSwiftPackageReference "SnapKit" */,
 				CA6F547C28476F5A002093C4 /* XCRemoteSwiftPackageReference "Nuke" */,
+				CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */,
+				CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */,
 			);
 			productRefGroup = CA6F53B12844AB3C002093C4 /* Products */;
 			projectDirPath = "";
@@ -662,6 +673,7 @@
 				CA6F5442284654F7002093C4 /* AllCharactersViewProtocol.swift in Sources */,
 				CA6F545528466615002093C4 /* SplashViewProtocol.swift in Sources */,
 				CA6F540C2846180C002093C4 /* AllCharactersViewModel.swift in Sources */,
+				CAC1F77A284E362F00876160 /* CharacterEpisodesCell.swift in Sources */,
 				CA6F54442846563E002093C4 /* InterfaceStrings.swift in Sources */,
 				CA6F53EE2844F9C0002093C4 /* Endpoint.swift in Sources */,
 				CA6F53DE2844DE9D002093C4 /* CharacterNetworkService.swift in Sources */,
@@ -936,6 +948,22 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kean/Nuke.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+		CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				branch = develop;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -948,6 +976,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = CA6F547C28476F5A002093C4 /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
+		};
+		CAC1F77C284E7E9F00876160 /* Nuke */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */;
+			productName = Nuke;
+		};
+		CAC1F77F284E7EAF00876160 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

@@ -10,15 +10,16 @@ import UIKit
 class CharacterViewCell: UITableViewCell {
 
     private var imageURL: URL?
-    private var image: UIImageView = UIImageView()
+    private var photo: UIImageView = UIImageView()
     private var name: UILabel = UILabel()
     private var episodes: UILabel = UILabel()
     private var status: UIProgressView = UIProgressView()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
-        clearElements()
         setup()
+        clearElements()
+        
     }
     
     required init?(coder: NSCoder) {
@@ -27,10 +28,10 @@ class CharacterViewCell: UITableViewCell {
     
     func setup() {
         contentView.frame = CGRect(x: 0, y: 0, width: 414, height: 80)
-        image.contentMode = .scaleAspectFit
-        contentView.addSubview(image)
+        photo.contentMode = .scaleAspectFit
+        contentView.addSubview(photo)
        
-        image.snp.makeConstraints { make in
+        photo.snp.makeConstraints { make in
             make.left.equalToSuperview()
             make.top.equalToSuperview().inset(5)
             make.bottom.equalToSuperview().inset(5)
@@ -42,7 +43,7 @@ class CharacterViewCell: UITableViewCell {
         contentView.addSubview(name)
        
         name.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).inset(-8)
+            make.left.equalTo(photo.snp.right).inset(-8)
             make.top.equalToSuperview().inset(5)
             make.height.equalTo(20)
             make.right.equalToSuperview().inset(8)
@@ -53,7 +54,7 @@ class CharacterViewCell: UITableViewCell {
         contentView.addSubview(episodes)
         
         episodes.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).inset(-8)
+            make.left.equalTo(photo.snp.right).inset(-8)
             make.top.equalTo(name.snp.bottom)//.inset(8)
             make.height.equalTo(20)
             make.right.equalToSuperview().inset(8)
@@ -62,7 +63,7 @@ class CharacterViewCell: UITableViewCell {
         contentView.addSubview(status)
         status.backgroundColor = UIColor.clear
         status.snp.makeConstraints { make in
-            make.left.equalTo(image.snp.right).inset(-8)
+            make.left.equalTo(photo.snp.right).inset(-8)
             make.top.equalTo(episodes.snp.bottom).inset(8)
             make.right.equalToSuperview().inset(8)
             make.bottom.equalToSuperview().inset(5)
@@ -75,7 +76,7 @@ class CharacterViewCell: UITableViewCell {
     }
     
     private func clearElements() {
-        image.image = Images.portal
+        photo.image = Images.portal
         name.text = "name lorem ipsum"
         episodes.text = "episodes lorem ipsum"
         status.progress = 55
@@ -85,23 +86,15 @@ class CharacterViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func updareInterface(viewModel: CharacterCellViewModel) {
-        imageURL = viewModel.imageURL
-        name.text = viewModel.name
-        episodes.text = viewModel.episodes
-        status.progress = viewModel.progressValue
-        status.tintColor = viewModel.progressTintColor
-        
-        if let url =  viewModel.imageURL {
-            let queue = OperationQueue()
-            queue.qualityOfService = .background
-            queue.addOperation {
-               NetworkManager.shared.getImage(by: url) { [weak self] result in
-                    OperationQueue.main.addOperation {
-                        self?.image.image = result
-                    }
-                }
-            }
+    func updareInterface(data: Any) {
+        if let viewModel = data as? CharacterCellViewModel {
+            imageURL = viewModel.imageURL
+            name.text = viewModel.name
+            episodes.text = viewModel.episodes
+            status.progress = viewModel.progressValue
+            status.tintColor = viewModel.progressTintColor
+        } else if let uiImage = data as? UIImage {
+            photo.image = uiImage
         }
     }
 }

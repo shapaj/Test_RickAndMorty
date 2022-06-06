@@ -10,11 +10,11 @@ import UIKit
 
 struct CharacterAssembly {
     
-    static func createModule() -> CharacterViewController {
+    static func createModule(character: Character) -> CharacterViewController {
         
         let viewController = CharacterViewController()
         
-        viewController.presenter = CharacterPresenter(view: viewController)
+        viewController.presenter = CharacterPresenter(view: viewController, character: character, episodesNetworkService: EpisodesNetworkService(), characterNetworkService: CharacterNetworkService())
         
         return viewController
     }

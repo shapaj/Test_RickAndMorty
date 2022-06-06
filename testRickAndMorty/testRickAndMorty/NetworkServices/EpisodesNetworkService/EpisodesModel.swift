@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct EpisodesModel: Decodable {
+struct Episode: Decodable {
     
     
 }

@@ -8,5 +8,6 @@
 import Foundation
 
 protocol CharacterPresenterProtocol {
-    
+    func viewDidLoad()
+    func navigationBarLeftButton() 
 }

@@ -6,8 +6,10 @@
 //
 
 import Foundation
+import UIKit
 
 final class AllCharactersPresenter: AllCharactersPresenterProtocol {
+    
     private weak var view: AllCharactersViewProtocol!
     private var networkService: CharacterNetworkServiceProtocol
     private var model: CharactersModel? = nil
@@ -40,6 +42,18 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
             case .success(let newModel):
                 self?.model = newModel
                 self?.updateView(model: newModel)
+            }
+        }
+    }
+    
+    func getCharacterImage(by url: URL, complitionHandler: @escaping (UIImage) -> Void) {
+        let queue = OperationQueue()
+        queue.qualityOfService = .background
+        queue.addOperation { [weak self] in
+            
+            self?.networkService.getCharacterImage(by: url) { result in
+                guard let image = UIImage(data: result) else { return }
+                complitionHandler(image)
             }
         }
     }

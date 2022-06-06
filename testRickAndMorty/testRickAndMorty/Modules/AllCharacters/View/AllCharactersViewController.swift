@@ -63,7 +63,7 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
     }
     
     func presentCharacterView(character: Character) {
-        let characterView = CharacterAssembly.createModule()
+        let characterView = CharacterAssembly.createModule(character: character)
         characterView.modalPresentationStyle = .fullScreen
         navigationController?.present(characterView, animated: true)
     }
@@ -86,7 +86,15 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterViewCell") as? CharacterViewCell else { return UITableViewCell() }
         
-        cell.updareInterface(viewModel: viewModel[indexPath.row])
+        cell.updareInterface(data: viewModel[indexPath.row])
+        
+        if let url =  viewModel[indexPath.row].imageURL {
+            presenter.getCharacterImage(by: url) { [weak cell] result in
+                OperationQueue.main.addOperation {
+                    cell?.updareInterface(data: result)
+                }
+            }
+        }
         
         return cell
     }

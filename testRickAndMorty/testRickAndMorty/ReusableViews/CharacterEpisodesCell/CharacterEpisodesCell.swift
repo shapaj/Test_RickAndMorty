@@ -1,18 +1,19 @@
 //
-//  CharacterDetalInfoCell.swift
+//  CharacterEpisodesCell.swift
 //  testRickAndMorty
 //
-//  Created by anduser on 03.06.2022.
+//  Created by anduser on 06.06.2022.
 //
 
 import UIKit
-import SnapKit
 
-class CharacterDetalInfoCell: UITableViewCell {
+class CharacterEpisodesCell: UITableViewCell {
+    
     let label = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
         setup()
         clearElements()
     }
@@ -25,11 +26,13 @@ class CharacterDetalInfoCell: UITableViewCell {
         clearElements()
     }
     
+    
     private func setup() {
         contentView.frame = CGRect(x: 0, y: 0, width: 414, height: 80)
         label.font = .systemFont(ofSize: 20)
         
         contentView.addSubview(label)
+
         label.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
         }
@@ -38,5 +41,4 @@ class CharacterDetalInfoCell: UITableViewCell {
     private func clearElements() {
         label.text = "lorel ipsum, lorel ipsum"
     }
-
 }

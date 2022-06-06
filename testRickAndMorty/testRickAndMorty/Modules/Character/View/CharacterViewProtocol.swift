@@ -8,5 +8,6 @@
 import UIKit
 
 protocol CharacterViewProtocol: UIViewController, CharacterRouterProtocol {
+    func updateInterface(viewModel: Any)
     
 }

@@ -6,7 +6,21 @@
 //
 
 import Foundation
+import UIKit
 
-struct CharacterViewModel{
-    
+struct CharacterViewModel {
+ 
+    let id: Int
+    var imageURL: URL?
+    let name: String
+    let progressValue: Float
+    let progressTintColor: UIColor?
+ 
+    init(character: Character) {
+        id = character.id
+        name = character.name
+        imageURL = URL(string: character.image)
+        progressValue = character.status.progressValue
+        progressTintColor = character.status.progressTintColor
+    }
 }

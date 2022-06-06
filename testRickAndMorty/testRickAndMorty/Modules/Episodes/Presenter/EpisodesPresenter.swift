@@ -9,7 +9,7 @@ import Foundation
 
 final class EpisodesPresenter: EpisodesPresenterProtocol {
     
-    private var episodesModel: EpisodesModel?
+    private var episodes: [Episode]?
     private weak var view: EpisodesViewProtocol!
     private let networkService: EpisodesNetworkServiceProtocol
     

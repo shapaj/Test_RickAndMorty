@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CharacterDetalInfoCell: UITableViewCell {
+class CharacterDetalInfoCell: UITableViewCell, UpToDatable {
     let label = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -26,9 +26,9 @@ class CharacterDetalInfoCell: UITableViewCell {
     }
     
     private func setup() {
-        contentView.frame = CGRect(x: 0, y: 0, width: 414, height: 80)
+        contentView.frame = CGRect(x: 0, y: 0, width: 414, height: 40)
         label.font = .systemFont(ofSize: 20)
-        
+        label.textColor = Colors.darkGreen
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.edges.equalToSuperview().inset(8)
@@ -36,7 +36,12 @@ class CharacterDetalInfoCell: UITableViewCell {
     }
     
     private func clearElements() {
-        label.text = "lorel ipsum, lorel ipsum"
+        label.text = nil
     }
 
+    func updateInterface(_ model: Any) {
+        if let model = model as? CharacterDetalInfoCellViewModel {
+            label.text = model.title
+        }
+    }
 }

@@ -10,17 +10,26 @@ import UIKit
 
 struct CharacterViewModel {
  
+    let navigationBarModel: CommonNavigationBarModel
+    var sections: [CharacterDetalInfoSectionViewModel] = []
     let id: Int
-    var imageURL: URL?
-    let name: String
-    let progressValue: Float
-    let progressTintColor: UIColor?
  
     init(character: Character) {
+        
         id = character.id
-        name = character.name
-        imageURL = URL(string: character.image)
-        progressValue = character.status.progressValue
-        progressTintColor = character.status.progressTintColor
+        navigationBarModel = CommonNavigationBarModel(title: character.name)
+        
+        sections = [
+            CharacterDetalInfoSectionViewModel(.status, [character.status.rawValue]),
+            CharacterDetalInfoSectionViewModel(.species, [character.species]),
+            CharacterDetalInfoSectionViewModel(.gender, [character.gender.rawValue]),
+            CharacterDetalInfoSectionViewModel(.origin, [character.origin.name]),
+            CharacterDetalInfoSectionViewModel(.location, [character.location.name]),
+            CharacterDetalInfoSectionViewModel(.episodes, [])
+        ]
+        
+        if character.type != "" {
+            sections.insert(CharacterDetalInfoSectionViewModel(.type, [character.type]), at: 3)
+        }
     }
 }

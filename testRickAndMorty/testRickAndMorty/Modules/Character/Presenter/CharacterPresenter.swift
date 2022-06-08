@@ -48,9 +48,8 @@ final class CharacterPresenter: CharacterPresenterProtocol {
         
         episodesNetworkService.getEpisodes(character: character) { [weak self] result in
             switch result {
-                
             case .success(let episodes):
-                self?.updateInterface(viewModel: episodes)
+                self?.updateInterface(viewModel: episodes.prefix(4))
             case .failure(let error):
                 print(error)
             }
@@ -59,6 +58,15 @@ final class CharacterPresenter: CharacterPresenterProtocol {
     
     func navigationBarLeftButton()  {
         view.showPrevious()
+    }
+    
+    func tagTithURLTaped(episode: Episode?) {
+        if let episode = episode {
+            view.pushEpisodeView(episode: episode)
+        } else {
+            view.presentEpisodes(character: character)
+        }
+        
     }
     
     private func updateInterface(viewModel: Any) {

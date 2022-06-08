@@ -9,4 +9,6 @@ import Foundation
 
 protocol CharacterRouterProtocol {
     func showPrevious()
+    func pushEpisodeView(episode: Episode)
+    func presentEpisodes(character: Character)
 }

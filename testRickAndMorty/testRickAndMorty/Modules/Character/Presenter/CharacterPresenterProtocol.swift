@@ -9,5 +9,6 @@ import Foundation
 
 protocol CharacterPresenterProtocol {
     func viewDidLoad()
-    func navigationBarLeftButton() 
+    func navigationBarLeftButton()
+    func tagTithURLTaped(episode: Episode?)
 }

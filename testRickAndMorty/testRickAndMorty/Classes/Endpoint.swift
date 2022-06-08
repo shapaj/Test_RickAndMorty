@@ -29,7 +29,7 @@ enum Endpoint: String {
       
         return character.episode.map {
              $0.replacingOccurrences(of: "https://rickandmortyapi.com/api/episode/", with: "")
-        } .joined(separator: ",")
+        } .joined(separator: ",") + ","
         
         
     }

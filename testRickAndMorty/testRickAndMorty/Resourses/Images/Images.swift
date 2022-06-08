@@ -15,4 +15,10 @@ struct Images {
     
     static let portal: UIImage? = UIImage(named: "Portal")
     static let RickAndMortyText: UIImage? = UIImage(named: "RickAndMortyText")
+    
+    static let alien: UIImage? = UIImage(named: "Alien")
+    static let galaxy: UIImage? = UIImage(named: "Galaxy")
+    static let gender: UIImage? = UIImage(named: "Gender")
+    static let heard: UIImage? = UIImage(named: "Heard")
+    static let unknown: UIImage? = UIImage(named: "Unknown")
 }

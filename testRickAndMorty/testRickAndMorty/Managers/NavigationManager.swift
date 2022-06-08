@@ -12,6 +12,10 @@ final class NavigationManager {
     
     static let shared: NavigationManager = NavigationManager()
     
+    func presentEpisodes(by character: Character) {
+        
+    }
+    
     func presentTabViewController(charactersModel: CharactersModel? = nil) {
         let keyWindow = UIApplication.shared.connectedScenes
             .filter({$0.activationState == .foregroundActive})

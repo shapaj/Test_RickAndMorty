@@ -70,6 +70,14 @@
 		CAC1F77A284E362F00876160 /* CharacterEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */; };
 		CAC1F77D284E7E9F00876160 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77C284E7E9F00876160 /* Nuke */; };
 		CAC1F780284E7EAF00876160 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77F284E7EAF00876160 /* SnapKit */; };
+		CAC1F782284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F781284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift */; };
+		CAC1F784284E894400876160 /* CharacterDetalInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F783284E894400876160 /* CharacterDetalInfoCellViewModel.swift */; };
+		CAC1F787284F2C6300876160 /* UpToDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F786284F2C6300876160 /* UpToDatable.swift */; };
+		CAC1F78D284F323400876160 /* TagLabelModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F78A284F323400876160 /* TagLabelModel.swift */; };
+		CAC1F78E284F323400876160 /* TagViewLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F78B284F323400876160 /* TagViewLabel.swift */; };
+		CAC1F790284F34B300876160 /* TagsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F78F284F34B300876160 /* TagsLayout.swift */; };
+		CAC1F795284FE4A300876160 /* EpisodeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F794284FE4A300876160 /* EpisodeAssembly.swift */; };
+		CAC1F797284FE4B500876160 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F796284FE4B500876160 /* EpisodeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -134,6 +142,14 @@
 		CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCell.swift; sourceTree = "<group>"; };
 		CAC1F776284DE89600876160 /* CommonNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationBar.swift; sourceTree = "<group>"; };
 		CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterEpisodesCell.swift; sourceTree = "<group>"; };
+		CAC1F781284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoSectionViewModel.swift; sourceTree = "<group>"; };
+		CAC1F783284E894400876160 /* CharacterDetalInfoCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCellViewModel.swift; sourceTree = "<group>"; };
+		CAC1F786284F2C6300876160 /* UpToDatable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UpToDatable.swift; sourceTree = "<group>"; };
+		CAC1F78A284F323400876160 /* TagLabelModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagLabelModel.swift; sourceTree = "<group>"; };
+		CAC1F78B284F323400876160 /* TagViewLabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TagViewLabel.swift; sourceTree = "<group>"; };
+		CAC1F78F284F34B300876160 /* TagsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsLayout.swift; sourceTree = "<group>"; };
+		CAC1F794284FE4A300876160 /* EpisodeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAssembly.swift; sourceTree = "<group>"; };
+		CAC1F796284FE4B500876160 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -170,16 +186,17 @@
 		CA6F53B22844AB3C002093C4 /* testRickAndMorty */ = {
 			isa = PBXGroup;
 			children = (
-				CAC1F775284DE87300876160 /* Views */,
 				CA6F53B32844AB3C002093C4 /* AppDelegate.swift */,
 				CA6F53B52844AB3C002093C4 /* SceneDelegate.swift */,
 				CA6F53C72844AE03002093C4 /* Modules */,
 				CA6F53E12844DEE1002093C4 /* ReusableViews */,
+				CAC1F775284DE87300876160 /* Views */,
 				CA6F53DA2844DDF9002093C4 /* NetworkServices */,
 				CA6F53D82844DDD4002093C4 /* Managers */,
 				CA6F53EC2844F999002093C4 /* Classes */,
-				CA6F53E72844E0C7002093C4 /* Resourses */,
+				CAC1F785284F2C3E00876160 /* Protocols */,
 				CA6F545A28466961002093C4 /* Extentions */,
+				CA6F53E72844E0C7002093C4 /* Resourses */,
 			);
 			path = testRickAndMorty;
 			sourceTree = "<group>";
@@ -188,6 +205,7 @@
 			isa = PBXGroup;
 			children = (
 				CA6F540D28461BA2002093C4 /* Locations */,
+				CAC1F791284FE45600876160 /* Episode */,
 				CA6F54062846157C002093C4 /* Episodes */,
 				CA6F53F028460582002093C4 /* Character */,
 				CA6F53D62844DDBA002093C4 /* SplashView */,
@@ -294,6 +312,7 @@
 		CA6F53E12844DEE1002093C4 /* ReusableViews */ = {
 			isa = PBXGroup;
 			children = (
+				CAC1F788284F323400876160 /* CollectionViewLabel */,
 				CAC1F778284E35FC00876160 /* CharacterEpisodesCell */,
 				CAC1F772284A779B00876160 /* CharacterDetalInfoCell */,
 				CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */,
@@ -327,6 +346,7 @@
 			children = (
 				CA6F53ED2844F9C0002093C4 /* Endpoint.swift */,
 				CA6F54432846563E002093C4 /* InterfaceStrings.swift */,
+				CAC1F78F284F34B300876160 /* TagsLayout.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -542,6 +562,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */,
+				CAC1F781284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift */,
 			);
 			path = CharacterDetalInfoSection;
 			sourceTree = "<group>";
@@ -550,6 +571,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */,
+				CAC1F783284E894400876160 /* CharacterDetalInfoCellViewModel.swift */,
 			);
 			path = CharacterDetalInfoCell;
 			sourceTree = "<group>";
@@ -568,6 +590,48 @@
 				CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */,
 			);
 			path = CharacterEpisodesCell;
+			sourceTree = "<group>";
+		};
+		CAC1F785284F2C3E00876160 /* Protocols */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F786284F2C6300876160 /* UpToDatable.swift */,
+			);
+			path = Protocols;
+			sourceTree = "<group>";
+		};
+		CAC1F788284F323400876160 /* CollectionViewLabel */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F78A284F323400876160 /* TagLabelModel.swift */,
+				CAC1F78B284F323400876160 /* TagViewLabel.swift */,
+			);
+			path = CollectionViewLabel;
+			sourceTree = "<group>";
+		};
+		CAC1F791284FE45600876160 /* Episode */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F792284FE46400876160 /* Assembly */,
+				CAC1F793284FE47B00876160 /* View */,
+			);
+			path = Episode;
+			sourceTree = "<group>";
+		};
+		CAC1F792284FE46400876160 /* Assembly */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F794284FE4A300876160 /* EpisodeAssembly.swift */,
+			);
+			path = Assembly;
+			sourceTree = "<group>";
+		};
+		CAC1F793284FE47B00876160 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CAC1F796284FE4B500876160 /* EpisodeViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -655,8 +719,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6F542728462C28002093C4 /* LocationsViewModel.swift in Sources */,
+				CAC1F797284FE4B500876160 /* EpisodeViewController.swift in Sources */,
 				CA6F53F828460C19002093C4 /* CharacterViewController.swift in Sources */,
 				CA6F542128462927002093C4 /* LocationsRouterProtocol.swift in Sources */,
+				CAC1F78D284F323400876160 /* TagLabelModel.swift in Sources */,
 				CA6F542E28462E2A002093C4 /* EpisodesAssembly.swift in Sources */,
 				CA6F542C28462CF3002093C4 /* EpisodesModel.swift in Sources */,
 				CA6F53FC28460C85002093C4 /* CharacterRouterProtocol.swift in Sources */,
@@ -671,6 +737,7 @@
 				CA6F543828462E99002093C4 /* EpisodesPresenter.swift in Sources */,
 				CA6F540A284617F0002093C4 /* CharacterCellViewModel.swift in Sources */,
 				CA6F5442284654F7002093C4 /* AllCharactersViewProtocol.swift in Sources */,
+				CAC1F787284F2C6300876160 /* UpToDatable.swift in Sources */,
 				CA6F545528466615002093C4 /* SplashViewProtocol.swift in Sources */,
 				CA6F540C2846180C002093C4 /* AllCharactersViewModel.swift in Sources */,
 				CAC1F77A284E362F00876160 /* CharacterEpisodesCell.swift in Sources */,
@@ -687,10 +754,12 @@
 				CA6F541D28462817002093C4 /* LocationNetworkService.swift in Sources */,
 				CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */,
 				CA6F543228462E59002093C4 /* EpisodesViewController.swift in Sources */,
+				CAC1F78E284F323400876160 /* TagViewLabel.swift in Sources */,
 				CA6F541F28462840002093C4 /* LocationModel.swift in Sources */,
 				CA6F54572846675F002093C4 /* Colors.swift in Sources */,
 				CA6F544628465BF1002093C4 /* Images.swift in Sources */,
 				CA6F53B42844AB3C002093C4 /* AppDelegate.swift in Sources */,
+				CAC1F784284E894400876160 /* CharacterDetalInfoCellViewModel.swift in Sources */,
 				CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */,
 				CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */,
 				CA6F543428462E6C002093C4 /* EpisodesViewProtocol.swift in Sources */,
@@ -703,10 +772,13 @@
 				CA6F540228460E0B002093C4 /* CharacterViewModel.swift in Sources */,
 				CA6F543028462E42002093C4 /* EpisodesViewModel.swift in Sources */,
 				CA6F53E02844DEB3002093C4 /* CharactersModel.swift in Sources */,
+				CAC1F790284F34B300876160 /* TagsLayout.swift in Sources */,
 				CA6F5451284665EF002093C4 /* SplashViewController.swift in Sources */,
 				CA6F542528462AA4002093C4 /* LocationsPresenterProtocol.swift in Sources */,
 				CA6F542328462A8D002093C4 /* LocationsPresenter.swift in Sources */,
 				CA6F53FA28460C3C002093C4 /* CharacterViewProtocol.swift in Sources */,
+				CAC1F782284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift in Sources */,
+				CAC1F795284FE4A300876160 /* EpisodeAssembly.swift in Sources */,
 				CA6F544D284665B5002093C4 /* SplashPresenterProtocol.swift in Sources */,
 				CA6F53B62844AB3C002093C4 /* SceneDelegate.swift in Sources */,
 			);

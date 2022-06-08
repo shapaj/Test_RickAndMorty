@@ -47,33 +47,32 @@ class CommonNavigationBar: UINavigationBar {
     func setModel(model: CommonNavigationBarModel) {
         let navigationItem = UINavigationItem(title: model.title)
         
-        let buttonLeft = UIButton()
+        if model.isLeftButtonUsed {
+            let buttonLeft = UIButton()
+            
+            buttonLeft.setImage(model.leftButtonImage, for: .normal)
+            buttonLeft.setTitle(model.leftButtontitle, for: .normal)
+            buttonLeft.tintColor = Colors.darkGreen
+            buttonLeft.setTitleColor(Colors.darkGreen, for: .normal)
+            buttonLeft.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigationBarLeftButton)))
+            
+            let leftButton = UIBarButtonItem(customView: buttonLeft)
+            navigationItem.leftBarButtonItem = leftButton
+        }
         
-        buttonLeft.setImage(model.leftButtonImage, for: .normal)
-        buttonLeft.setTitle(model.leftButtontitle, for: .normal)
-        buttonLeft.tintColor = Colors.darkGreen
-        buttonLeft.setTitleColor(Colors.darkGreen, for: .normal)
+        if model.isRightButtonUsed {
+            let buttonRight = UIButton()
         
-
-        buttonLeft.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigationBarLeftButton)))
-        
-        let leftButton = UIBarButtonItem(customView: buttonLeft)
-        
-        navigationItem.leftBarButtonItem = leftButton
-       
-        let buttonRight = UIButton()
-        
-        buttonRight.setImage(model.rightButtonImage, for: .normal)
-        buttonRight.setTitle(model.rightButtontitle, for: .normal)
-        buttonRight.tintColor = Colors.darkGreen
-        buttonRight.setTitleColor(Colors.darkGreen, for: .normal)
-        
-
-        buttonRight.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigationBarRightButton)))
-        
-        let RightButton = UIBarButtonItem(customView: buttonRight)
-        
-        navigationItem.rightBarButtonItem = RightButton
+            buttonRight.setImage(model.rightButtonImage, for: .normal)
+            buttonRight.setTitle(model.rightButtontitle, for: .normal)
+            buttonRight.tintColor = Colors.darkGreen
+            buttonRight.setTitleColor(Colors.darkGreen, for: .normal)
+            buttonRight.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(navigationBarRightButton)))
+            
+            let RightButton = UIBarButtonItem(customView: buttonRight)
+            
+            navigationItem.rightBarButtonItem = RightButton
+        }
         
         self.setItems([navigationItem], animated: false)
     }
@@ -81,12 +80,6 @@ class CommonNavigationBar: UINavigationBar {
     
 }
 
-//extension UINavigationBarDelegate {
-//    func navigationBarLeftButton() {
-//
-//    }
-//}
-//
 @objc protocol CommonNavigationBarDelegate: UINavigationBarDelegate {
     @objc optional func navigationBarLeftButton()
     @objc optional func navigationBarRightButton()
@@ -94,26 +87,42 @@ class CommonNavigationBar: UINavigationBar {
 }
 
 struct CommonNavigationBarModel {
+    let isLeftButtonUsed: Bool
+    let isRightButtonUsed: Bool
+    
     var leftButtontitle: String?
     var leftButtonImage: UIImage?
     var rightButtontitle: String?
     var rightButtonImage: UIImage?
     var title: String = ""
     
-    init() {
-//        model.leftButtonImage?.renderingMode = .alwaysTemplate
+    init(title: String = "",
+         leftButtontitle: String? = "back",
+         leftButtonImage: UIImage? = UIImage(systemName: "chevron.left"),
+         rightButtontitle: String? = nil,
+         rightButtonImage: UIImage? = nil,
+         isLeftButtonUsed: Bool = true,
+         isRightButtonUsed: Bool = false) {
+        
+        self.leftButtontitle = leftButtontitle
+        self.leftButtonImage = leftButtonImage
+        self.rightButtontitle = rightButtontitle
+        self.rightButtonImage = rightButtonImage
+        self.title = title
+        self.isLeftButtonUsed = isLeftButtonUsed
+        self.isRightButtonUsed = isRightButtonUsed
     }
     
     static func mock() -> CommonNavigationBarModel {
        
-        var model = CommonNavigationBarModel()
-        model.leftButtontitle = "left"
-        model.leftButtonImage = Images.charactersIcon?.withRenderingMode(.alwaysTemplate)
-//        model.leftButtonImage?.renderingMode = .alwaysTemplate
-        ///UIImage(systemName: "arrow")
-        model.rightButtontitle = "right"
-        model.rightButtonImage = UIImage(systemName: "arrow")
-        model.title = "title"
+        let model = CommonNavigationBarModel(title: "title",
+                                             leftButtontitle: "left",
+                                             leftButtonImage: UIImage(systemName: "chevron.left")?.withRenderingMode(.alwaysTemplate),
+                                             
+                                             rightButtontitle: "right",
+                                             rightButtonImage: UIImage(systemName: "chevron.right"),
+                                             isLeftButtonUsed: true,
+                                             isRightButtonUsed: true)
         return model
     }
 }

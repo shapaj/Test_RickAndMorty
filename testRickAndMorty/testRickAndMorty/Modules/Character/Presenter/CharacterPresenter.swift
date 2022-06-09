@@ -39,13 +39,6 @@ final class CharacterPresenter: CharacterPresenterProtocol {
             }
         }
         
-        if let url = URL(string: character.image) {
-            characterNetworkService.getCharacterImage(by: url) { [weak self] result in
-                guard let image = UIImage(data: result) else { return }
-                self?.updateInterface(viewModel: image)
-            }
-        }
-        
         episodesNetworkService.getEpisodes(character: character) { [weak self] result in
             switch result {
             case .success(let episodes):

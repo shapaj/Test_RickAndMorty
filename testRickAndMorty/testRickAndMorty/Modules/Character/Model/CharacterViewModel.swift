@@ -13,6 +13,7 @@ struct CharacterViewModel {
     let navigationBarModel: CommonNavigationBarModel
     var sections: [CharacterDetalInfoSectionViewModel] = []
     let id: Int
+    let imageURL: URL?
  
     init(character: Character) {
         
@@ -31,5 +32,7 @@ struct CharacterViewModel {
         if character.type != "" {
             sections.insert(CharacterDetalInfoSectionViewModel(.type, [character.type]), at: 3)
         }
+        
+        imageURL = URL(string: character.image)
     }
 }

@@ -10,6 +10,7 @@ import UIKit
 
 protocol AllCharactersPresenterProtocol {
     func viewDidLoad()
+    func getNextCharacters()
     func tableViewdidSelectRowAt(_ indexPath: IndexPath)
     func getCharacterImage(by url: URL, complitionHandler: @escaping (UIImage) -> Void)
 }

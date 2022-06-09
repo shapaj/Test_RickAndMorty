@@ -11,7 +11,7 @@ import SnapKit
 final class AllCharactersViewController: UIViewController, AllCharactersViewProtocol {
     
     var presenter: AllCharactersPresenterProtocol!
-    var viewModel: [CharacterCellViewModel] = []
+    var viewModel: AllCharactersViewModel?
     
     let imageView = UIImageView()
     
@@ -24,15 +24,14 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
         view.backgroundColor = Colors.background
     }
     
-    
     override func viewWillAppear(_ animated: Bool) { }
     
     private func setupUI() {
+        setupImage()
         setupTable()
     }
     
-    private func setupTable() {
-        
+    private func setupImage() {
         imageView.contentMode = .scaleAspectFit
         let image = Images.RickAndMortyText
         imageView.image = image
@@ -44,7 +43,9 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
             make.right.equalToSuperview().inset(8)
             make.height.equalTo(44)
         }
-        
+    }
+    
+    private func setupTable() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(8)
@@ -57,8 +58,9 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
         tableView.register(CharacterViewCell.self, forCellReuseIdentifier: "CharacterViewCell")
     }
     
-    func updateInterface(viewModel: [CharacterCellViewModel]) {
+    func updateInterface(viewModel: AllCharactersViewModel) {
         self.viewModel = viewModel
+//        tableView.row
         tableView.reloadData()
     }
     
@@ -72,7 +74,7 @@ final class AllCharactersViewController: UIViewController, AllCharactersViewProt
 extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSource {
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.viewModel.count//.characterCells.count
+        return viewModel?.characterCells.count ?? 0
     }
     
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -80,21 +82,19 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.cellForRow(at: indexPath)?.isSelected = false
         presenter.tableViewdidSelectRowAt(indexPath)
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterViewCell") as? CharacterViewCell else { return UITableViewCell() }
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterViewCell") as? CharacterViewCell,
+              let cellmodel = viewModel?.characterCells[indexPath.row] else { return UITableViewCell() }
         
-        cell.updareInterface(data: viewModel[indexPath.row])
-        
-        if let url =  viewModel[indexPath.row].imageURL {
-            presenter.getCharacterImage(by: url) { [weak cell] result in
-                OperationQueue.main.addOperation {
-                    cell?.updareInterface(data: result)
-                }
-            }
+        if indexPath.row + 1 == viewModel?.characterCells.count {
+            presenter.getNextCharacters()
         }
+        
+        cell.updareInterface(data: cellmodel)
         
         return cell
     }

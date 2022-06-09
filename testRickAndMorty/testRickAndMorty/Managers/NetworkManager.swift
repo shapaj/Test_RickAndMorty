@@ -6,9 +6,10 @@
 //
 
 import Foundation
-import UIKit
+import Nuke
 
 final class NetworkManager {
+    
     
     static let shared: NetworkManager = NetworkManager()
     
@@ -68,6 +69,8 @@ final class NetworkManager {
     }
     
     func getImage(by url: URL?, complitionHandler: @escaping (Data) -> Void) {
+        
+        
         guard let url = url else { return }
         
         let request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: Constants.apiTimeoutInterval)
@@ -80,7 +83,6 @@ final class NetworkManager {
         dataTask.resume()
     }
 }
-
 
 struct Constants {
     static let apiTimeoutInterval: TimeInterval = TimeInterval(20)

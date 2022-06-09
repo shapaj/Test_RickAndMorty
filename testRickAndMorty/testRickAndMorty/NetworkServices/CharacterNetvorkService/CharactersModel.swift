@@ -10,14 +10,14 @@ import UIKit
 
 struct CharactersModel: Codable {
     
-    let info: CharactersInfo
-    let results: [Character]
+    var info: CharactersInfo
+    var results: [Character]
     
     struct CharactersInfo: Codable {
         let count: Int
         let pages: Int
-        let next: String?
-        let prev: String?
+        var next: String?
+        var prev: String?
         
         enum DecodingKeys: String, CodingKey {
             case count
@@ -35,6 +35,13 @@ struct CharactersModel: Codable {
         }
     }
     
+    mutating func ubdateModel(with newModel: CharactersModel) {
+        results.append(contentsOf: newModel.results)
+        info = newModel.info
+        
+        
+        
+    }
 }
 
 struct Character: Codable {

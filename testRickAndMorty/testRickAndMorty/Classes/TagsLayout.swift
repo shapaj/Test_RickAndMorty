@@ -23,8 +23,8 @@ class TagsLayout: UICollectionViewFlowLayout {
     
     private func common() {
         estimatedItemSize = UICollectionViewFlowLayout.automaticSize
-        minimumLineSpacing = 10
-        minimumInteritemSpacing = 10
+        minimumLineSpacing = 5
+        minimumInteritemSpacing = 5
     }
     
     override func layoutAttributesForElements(in rect: CGRect) -> [UICollectionViewLayoutAttributes]? {

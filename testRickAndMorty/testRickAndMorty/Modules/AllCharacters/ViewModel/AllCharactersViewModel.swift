@@ -10,9 +10,9 @@ import UIKit
 
 struct AllCharactersViewModel {
     var characterCells: [CharacterCellViewModel]
-    
+    let charactersCount: Int
     init(charactersModel: CharactersModel) {
-        
+        charactersCount = charactersModel.info.count
         characterCells = charactersModel.results.map {  CharacterCellViewModel(model: $0) }
     }
 }

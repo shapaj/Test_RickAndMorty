@@ -33,11 +33,11 @@ class TagViewLabel: UICollectionViewCell {
     }
     
     func setupIntarface() {
-        layer.cornerRadius = 5
+        layer.cornerRadius = 3
         contentView.addSubview(label)
         label.snp.makeConstraints { make in
             make.top.bottom.equalToSuperview()
-            make.left.right.equalToSuperview().inset(5)
+            make.left.right.equalToSuperview().inset(3)
         }
     }
     
@@ -57,7 +57,7 @@ class TagViewLabel: UICollectionViewCell {
     
     func updateInterface(with model: TagLabelModel) {
         label.text = model.title
-        label.font = .systemFont(ofSize: 20)
+        label.font = .systemFont(ofSize: 18)
         label.textColor = model.textColor
         label.backgroundColor = model.bacgroundColor
         self.backgroundColor = model.bacgroundColor

@@ -8,17 +8,17 @@
 import UIKit
 
 struct CharacterDetalInfoSectionViewModel {
-    let type: UserInfoSectionTipes
+    let type: UserInfoSectionTipys
     var cells: [CharacterDetalInfoCellViewModel] = []
     
-    init(_ type: UserInfoSectionTipes, _ values: [String]) {
+    init(_ type: UserInfoSectionTipys, _ values: [String]) {
         self.type = type
         
         cells = values.compactMap { CharacterDetalInfoCellViewModel(title: $0) }
     }
 }
 
-enum UserInfoSectionTipes: String {
+enum UserInfoSectionTipys: String {
     
     case status = "Status"
     case species = "Species"

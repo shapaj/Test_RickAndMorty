@@ -26,6 +26,9 @@ class CharacterDetalInfoCell: UITableViewCell, UpToDatable {
     }
     
     private func setup() {
+        contentView.backgroundColor = .clear
+        label.backgroundColor = .clear
+        self.backgroundColor = .clear
         contentView.frame = CGRect(x: 0, y: 0, width: 414, height: 40)
         label.font = .systemFont(ofSize: 20)
         label.textColor = Colors.darkGreen

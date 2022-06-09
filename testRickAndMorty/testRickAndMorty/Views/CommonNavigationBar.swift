@@ -20,7 +20,7 @@ class CommonNavigationBar: UINavigationBar {
     
     init() {
         super.init(frame: CGRect())
-        
+        backgroundColor = Colors.background
         // default
         let navigationItem = UINavigationItem(title: "")
         let buttonLeft = UIButton()

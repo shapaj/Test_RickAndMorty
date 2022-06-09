@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import Nuke
 
 class CharacterViewCell: UITableViewCell {
 
@@ -93,8 +94,8 @@ class CharacterViewCell: UITableViewCell {
             episodes.text = viewModel.episodes
             status.progress = viewModel.progressValue
             status.tintColor = viewModel.progressTintColor
-        } else if let uiImage = data as? UIImage {
-            photo.image = uiImage
+            
+            loadImage(with: viewModel.imageURL, into: photo)
         }
     }
 }

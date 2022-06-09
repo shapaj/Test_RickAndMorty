@@ -12,7 +12,7 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
     
     private weak var view: AllCharactersViewProtocol!
     private var networkService: CharacterNetworkServiceProtocol
-    private var model: CharactersModel? = nil
+    private var model: CharactersModel?
     
     init(view: AllCharactersViewProtocol!, model: CharactersModel? = nil, networkService: CharacterNetworkService) {
         self.view = view
@@ -40,8 +40,9 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
             case .failure(let error):
                 print(error.localizedDescription)
             case .success(let newModel):
-                self?.model = newModel
-                self?.updateView(model: newModel)
+                self?.model?.ubdateModel(with: newModel)
+                guard let self = self, let model = self.model else { return }
+                self.updateView(model: model)
             }
         }
     }
@@ -60,7 +61,7 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
     
     private func updateView(model: CharactersModel) {
         OperationQueue.main.addOperation { [weak self] in
-            self?.view.updateInterface(viewModel: AllCharactersViewModel(charactersModel: model).characterCells)
+            self?.view.updateInterface(viewModel: AllCharactersViewModel(charactersModel: model))
         }
     }
     

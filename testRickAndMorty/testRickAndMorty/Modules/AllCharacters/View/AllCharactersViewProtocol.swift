@@ -9,4 +9,6 @@ import UIKit
 
 protocol AllCharactersViewProtocol: UIViewController, AllCharactersRouterProtocol {
     func updateInterface(viewModel: AllCharactersViewModel)
+    func showGoToTop()
+    func scrollTableToTop()
 }

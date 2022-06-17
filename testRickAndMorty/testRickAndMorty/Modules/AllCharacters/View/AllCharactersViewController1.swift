@@ -8,14 +8,16 @@
 import UIKit
 import SnapKit
 
-final class AllCharactersViewController: BaseViewController, AllCharactersViewProtocol,
+final class AllCharactersViewController1: BaseViewController, AllCharactersViewProtocol,
                                             UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
     
     var presenter: AllCharactersPresenterProtocol!
     var viewModel: AllCharactersViewModel?
+    let searchController = UISearchController(searchResultsController: nil)
     let imageView = UIImageView()
     private var goTopView: UIImageView = UIImageView()
     private var tableView: UITableView = UITableView()
+    let tableHeaderView = UIView()
     
     
     override func viewDidLoad() {
@@ -39,6 +41,7 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
     
     private func setupTableGoTopView() {
+        
         view.addSubview(goTopView)
         goTopView.isHidden = true
         goTopView.image = Images.portal
@@ -70,22 +73,72 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
     
     private func setupTable() {
+
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(8)
             make.right.equalToSuperview().inset(8)
             make.bottom.equalToSuperview()
-//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
-            make.top.equalTo(imageView.snp.bottom).inset(-8)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(52)
+//            (imageView.snp.bottom).inset(-8)
         }
         tableView.delegate = self
         tableView.dataSource = self
+        
         tableView.register(CharacterViewCell.self, forCellReuseIdentifier: "CharacterViewCell")
-        view.layoutIfNeeded()
+        
+        
+        
+        // 1
+        searchController.searchResultsUpdater = self
+        // 2
+        searchController.obscuresBackgroundDuringPresentation = false
+        // 3
+        searchController.searchBar.placeholder = "Search Candies"
+        // 4
+        navigationItem.searchController = searchController
+        // 5
+        definesPresentationContext = false
+//        
+////        navigationItem.hidesSearchBarWhenScrolling = true
+//        
+//        searchController.searchBar.sizeToFit()
+//        tableView.tableHeaderView = tableHeaderView
+//        
+//        tableHeaderView.snp.makeConstraints { make in
+//            make.height.equalTo(52)
+//            make.width.equalTo(tableView.snp.width)
+//        }
+//        tableHeaderView.addSubview(searchController.searchBar)
+//        searchController.searchBar.sizeToFit()
+////        searchViewController.searchBar
+////        tableView.tableHeaderView = searchViewController.searchBar
+//        
+////        searchController.hidesNavigationBarDuringPresentation = false
+////        searchController.hidesNavigationBarDuringPresentation = false
+//        searchController.searchBar.showsCancelButton = false
+////        searchBar.
+////        NavigationManager
+////        self.navigationController?.navigationItem.searchController = searchViewController
+////        searchViewController.hidesNavigationBarDuringPresentation = false
+////        tableView.tableHeaderView = searchController.searchBar
+//        tableView.tableHeaderView = tableHeaderView
+//        
+//        
+//        //        tableView.tableHeaderView?.snp.makeConstraints({ make in
+////
+////        })
+////        tableHeaderView
+////        tableView.tableHeaderView?.isHidden = false
+//        
+//        view.layoutIfNeeded()
+        
+    
     }
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+//        tableView.setContentOffset(CGPoint(x: 0, y: 52), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -113,7 +166,8 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
     
     func scrollTableToTop() {
-        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+        //tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
+//        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         goTopView.isHidden = true
     }
     
@@ -124,7 +178,8 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
 //
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         return true
-     
+        
+        
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -137,7 +192,7 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
 }
 
 
-extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+extension AllCharactersViewController1: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -169,11 +224,6 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
             
             presenter.getNextCharacters()
         }
-            
-//        if indexPath.row == 1 {
-//            tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-//            scrollTableToTop()
-//        }
         goTopView.isHidden = indexPath.row < 20
         
         cell.updareInterface(data: cellmodel)
@@ -181,6 +231,8 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {    }
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+    }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+    }
 }

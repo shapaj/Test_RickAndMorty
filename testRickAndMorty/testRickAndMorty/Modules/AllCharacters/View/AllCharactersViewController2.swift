@@ -8,15 +8,17 @@
 import UIKit
 import SnapKit
 
-final class AllCharactersViewController: BaseViewController, AllCharactersViewProtocol,
-                                            UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
+final class AllCharactersViewController2: BaseViewController, AllCharactersViewProtocol,
+                                            UISearchBarDelegate, UISearchControllerDelegate {
     
     var presenter: AllCharactersPresenterProtocol!
     var viewModel: AllCharactersViewModel?
+    private var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 44))
+    private var searchController = UISearchController()
     let imageView = UIImageView()
     private var goTopView: UIImageView = UIImageView()
     private var tableView: UITableView = UITableView()
-    
+    let tableHeaderView = UIView()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,7 +30,7 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     override func viewWillAppear(_ animated: Bool) { }
     
     private func setupUI() {
-        setupImage()
+//        setupImage()
         setupScrollView()
         setupTable()
         setupTableGoTopView()
@@ -39,6 +41,7 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
     
     private func setupTableGoTopView() {
+        
         view.addSubview(goTopView)
         goTopView.isHidden = true
         goTopView.image = Images.portal
@@ -70,22 +73,42 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
     
     private func setupTable() {
+
         view.addSubview(tableView)
         tableView.snp.makeConstraints { make in
             make.left.equalToSuperview().inset(8)
             make.right.equalToSuperview().inset(8)
             make.bottom.equalToSuperview()
-//            make.top.equalTo(view.safeAreaLayoutGuide.snp.top).inset(8)
-            make.top.equalTo(imageView.snp.bottom).inset(-8)
+            make.top.equalTo(view.safeAreaLayoutGuide).inset(8)
+//            make.top.equalTo(imageView.snp.bottom).inset(-8)
         }
         tableView.delegate = self
         tableView.dataSource = self
         tableView.register(CharacterViewCell.self, forCellReuseIdentifier: "CharacterViewCell")
-        view.layoutIfNeeded()
+        tableView.tableHeaderView = tableHeaderView
+        
+//        navigationItem
+        
+        
+        tableHeaderView.backgroundColor = .red
+        tableHeaderView.snp.makeConstraints({ make in
+            make.height.equalTo(52)
+            make.width.equalTo(tableView.snp.width)
+        })
+        
+        searchController.searchBar.sizeToFit()
+        searchController.hidesNavigationBarDuringPresentation = false
+//            searchController.dimsBackgroundDuringPresentation = false
+        tableHeaderView.addSubview(searchController.searchBar)
+        searchController.searchBar.delegate = self
+        searchController.searchBar.snp.makeConstraints { make in
+            make.edges.equalToSuperview().inset(4)
+        }
     }
   
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+//        tableView.setContentOffset(CGPoint(x: 0, y: 52), animated: true)
     }
     
     override func didReceiveMemoryWarning() {
@@ -119,12 +142,8 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     
     
     func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        print(searchBar.isFocused)
-        print(1)
-//
         tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
         return true
-     
     }
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
@@ -136,13 +155,11 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
     }
 }
 
-
-extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+extension AllCharactersViewController2: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     override var prefersStatusBarHidden: Bool {
         true
     }
-    
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.characterCells.count ?? 0
@@ -169,11 +186,6 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
             
             presenter.getNextCharacters()
         }
-            
-//        if indexPath.row == 1 {
-//            tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
-//            scrollTableToTop()
-//        }
         goTopView.isHidden = indexPath.row < 20
         
         cell.updareInterface(data: cellmodel)
@@ -181,6 +193,6 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
         return cell
     }
     
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {    }
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {    }
+    func scrollViewDidScroll(_ scrollView: UIScrollView) { }
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) { }
 }

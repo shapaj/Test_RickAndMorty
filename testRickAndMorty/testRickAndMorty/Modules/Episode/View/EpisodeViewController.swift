@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class EpisodeViewController: UIViewController {
+class EpisodeViewController: BaseViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()

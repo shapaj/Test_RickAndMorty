@@ -6,7 +6,7 @@
       "location" : "https://github.com/kean/Nuke.git",
       "state" : {
         "branch" : "master",
-        "revision" : "2d6fa0e266018d5bf6d143c7d5413d9066e96651"
+        "revision" : "1615aeb0413a314c9a9f03241533faa8dca41a2d"
       }
     },
     {
@@ -16,6 +16,15 @@
       "state" : {
         "branch" : "develop",
         "revision" : "07c5d1f6044701d97e94dc11157259e8811977be"
+      }
+    },
+    {
+      "identity" : "swipeabletabbarcontroller",
+      "kind" : "remoteSourceControl",
+      "location" : "https://github.com/marcosgriselli/SwipeableTabBarController",
+      "state" : {
+        "revision" : "f90f5142a9cd119f8929cec1bfcf78aa0a2f2e8f",
+        "version" : "3.4.2"
       }
     }
   ],

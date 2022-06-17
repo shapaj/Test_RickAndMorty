@@ -9,7 +9,7 @@ import UIKit
 import SnapKit
 import Nuke
 
-final class CharacterViewController: UIViewController, CharacterViewProtocol, CommonNavigationBarDelegate {
+final class CharacterViewController: BaseViewController, CharacterViewProtocol, CommonNavigationBarDelegate {
     
     var presenter: CharacterPresenterProtocol!
     private var viewModel: CharacterViewModel?

@@ -1,58 +1,37 @@
 //
-//  AllCharactersViewController.swift
+//  BasicHomeViewController.swift
 //  testRickAndMorty
 //
-//  Created by anduser on 30.05.2022.
+//  Created by anduser on 17.06.2022.
 //
 
 import UIKit
 import SnapKit
 
-final class AllCharactersViewController: BaseViewController, AllCharactersViewProtocol,
-                                            UISearchBarDelegate, UISearchControllerDelegate, UISearchResultsUpdating {
+protocol BasicHomePresenterProtocol {
     
-    var presenter: AllCharactersPresenterProtocol!
-    var viewModel: AllCharactersViewModel?
+}
+
+class BasicHomeViewController: BaseViewController {
+    
+    var viewModel: BasicTableViewModel?
+    private var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 44))
     let imageView = UIImageView()
     private var goTopView: UIImageView = UIImageView()
     private var tableView: UITableView = UITableView()
+    let tableHeaderView = UIView()
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter.viewDidLoad()
-        setupUI()
         view.backgroundColor = Colors.background
+        setupUI()
     }
-    
-    override func viewWillAppear(_ animated: Bool) { }
-    
+ 
     private func setupUI() {
         setupImage()
-        setupScrollView()
         setupTable()
         setupTableGoTopView()
-    }
-    
-    private func setupScrollView() {
-        
-    }
-    
-    private func setupTableGoTopView() {
-        view.addSubview(goTopView)
-        goTopView.isHidden = true
-        goTopView.image = Images.portal
-        goTopView.snp.makeConstraints { make in
-            make.width.height.equalTo(40)
-            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(15)
-            make.right.equalToSuperview().inset(15)
-        }
-        goTopView.isUserInteractionEnabled = true
-        goTopView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGoTopView(_:))))
-    }
-    
-    @objc func tapGoTopView(_ sender: UITapGestureRecognizer) {
-        presenter.goToTopTapped()
     }
     
     private func setupImage() {
@@ -83,61 +62,22 @@ final class AllCharactersViewController: BaseViewController, AllCharactersViewPr
         tableView.register(CharacterViewCell.self, forCellReuseIdentifier: "CharacterViewCell")
         view.layoutIfNeeded()
     }
-  
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-    }
-    
-    func updateSearchResults(for searchController: UISearchController) {
-        
-    }
-    
-    
-    func updateInterface(viewModel: AllCharactersViewModel) {
-        self.viewModel = viewModel
-        tableView.reloadData()
-    }
-    
-    func presentCharacterView(character: Character) {
-        let characterView = CharacterAssembly.createModule(character: character)
-        characterView.modalPresentationStyle = .fullScreen
-        navigationController?.present(characterView, animated: true)
-    }
-    
-    func showGoToTop() {
-        goTopView.isHidden = false
-    }
-    
-    func scrollTableToTop() {
-        tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
+    private func setupTableGoTopView() {
+        view.addSubview(goTopView)
         goTopView.isHidden = true
-    }
-    
-    
-    func searchBarShouldBeginEditing(_ searchBar: UISearchBar) -> Bool {
-        print(searchBar.isFocused)
-        print(1)
-//
-        tableView.scrollToRow(at: IndexPath(row: 0, section: 0), at: .top, animated: true)
-        return true
-     
-    }
-    
-    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-//        tableView.tableHeaderView?.isHidden = false
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-//        tableView.tableHeaderView?.isHidden = false
+        goTopView.image = Images.portal
+        goTopView.snp.makeConstraints { make in
+            make.width.height.equalTo(40)
+            make.bottom.equalTo(view.safeAreaLayoutGuide).inset(15)
+            make.right.equalToSuperview().inset(15)
+        }
+        goTopView.isUserInteractionEnabled = true
+        goTopView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(tapGoTopView(_:))))
     }
 }
 
-
-extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
+extension BasicHomeViewController: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
     override var prefersStatusBarHidden: Bool {
         true
@@ -183,4 +123,15 @@ extension AllCharactersViewController: UITableViewDelegate, UITableViewDataSourc
     
     func scrollViewDidScroll(_ scrollView: UIScrollView) {    }
     func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {    }
+}
+
+
+struct BasicTableViewModel: Decodable {
+    
+    var cells: [BasicTableCell] = []
+    
+}
+
+class BasicTableCell: UITableViewCell {
+    
 }

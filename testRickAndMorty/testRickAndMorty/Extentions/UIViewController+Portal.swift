@@ -36,8 +36,9 @@ extension UIViewController {
     }
     
     func hidePortal() {
-        
-        self.view.subviews.last?.removeFromSuperview()
+        OperationQueue.main.addOperation {
+            
+            self.view.subviews.last?.removeFromSuperview()}
     }
 }
 

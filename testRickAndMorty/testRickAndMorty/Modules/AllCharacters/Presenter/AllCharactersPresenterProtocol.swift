@@ -13,4 +13,7 @@ protocol AllCharactersPresenterProtocol {
     func getNextCharacters()
     func tableViewdidSelectRowAt(_ indexPath: IndexPath)
     func getCharacterImage(by url: URL, complitionHandler: @escaping (UIImage) -> Void)
+    func tableWasScrolled()
+    func goToTopTapped()
+    func getCharacters(name: String?)
 }

@@ -7,6 +7,13 @@
 
 import Foundation
 import UIKit
+import SwipeableTabBarController
+
+//extension UITabBarController: SwipeableTabBarController {
+//    
+//}
+
+
 
 final class NavigationManager {
     
@@ -28,12 +35,15 @@ final class NavigationManager {
     }
     
     func tabBarController(charactersModel: CharactersModel? = nil) -> UITabBarController {
-        let tabBarController = UITabBarController()
-        
+        let tabBarController = SwipeableTabBarController()
         let tabBarViewControllers: [UIViewController] = [
-            AllCharactersAssembly.tabBarViewController(charactersModel: charactersModel),
+            AllCharactersAssembly.tabBarViewController3(charactersModel: charactersModel),
+            
             EpisodesAssembly.tabBarViewController(),
-            LocationsAssembly.tabBarViewController()
+            LocationsAssembly.tabBarViewController(),
+            AllCharactersAssembly.tabBarViewController(charactersModel: charactersModel),
+            AllCharactersAssembly.tabBarViewController1(charactersModel: charactersModel),
+            AllCharactersAssembly.tabBarViewController2(charactersModel: charactersModel)
         ]
         
         tabBarController.tabBar.backgroundColor = nil
@@ -63,5 +73,11 @@ final class NavigationManager {
         
         itemAppearance.selected.iconColor = UIColor.white
         itemAppearance.selected.titleTextAttributes = [.foregroundColor: UIColor.white as Any]
+    }
+    
+    class TabBarTransitioningDelegate: NSObject, UIViewControllerTransitioningDelegate {
+        
+        
+        
     }
 }

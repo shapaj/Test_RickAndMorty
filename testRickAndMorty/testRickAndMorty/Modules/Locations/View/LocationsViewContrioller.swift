@@ -8,7 +8,7 @@
 import UIKit
 
 
-final class LocationsViewContrioller: UIViewController, LocationsViewProtocol {
+final class LocationsViewContrioller: BaseViewController, LocationsViewProtocol {
     
     var presenter: LocationsPresenterProtocol!
 

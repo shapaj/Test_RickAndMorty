@@ -20,7 +20,7 @@ enum Endpoint: String {
         
         urlComponents.path.append(self.rawValue)
         urlPaths?.forEach { urlComponents.path.append("/\($0)") }
-        queryItems?.forEach { urlComponents.queryItems?.append(URLQueryItem(name: $0.key, value: $0.value)) }
+        urlComponents.queryItems = queryItems?.map { URLQueryItem(name: $0.key, value: $0.value) }
         
         return urlComponents.url
     }

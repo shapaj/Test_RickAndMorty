@@ -14,6 +14,7 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
     private var networkService: CharacterNetworkServiceProtocol
     private var model: CharactersModel?
     
+    
     init(view: AllCharactersViewProtocol!, model: CharactersModel? = nil, networkService: CharacterNetworkService) {
         self.view = view
         self.model = model
@@ -34,8 +35,27 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
         view.presentCharacterView(character: character)
     }
     
+    func getCharacters(name: String?) {
+        guard let name = name else { return }
+        
+        networkService.getCharacters(queryItems: ["name": name]) { [weak self] result in
+            guard let self = self else { return }
+            
+            switch result {
+            case .failure(let error):
+                print(error.localizedDescription)
+                self.model = CharactersModel.nilObject()
+            case .success(let newModel):
+                self.model = newModel
+            }
+
+            guard let model = self.model else { return }
+            self.updateView(model: model)
+        }
+    }
+    
     func getNextCharacters() {
-        networkService.getCharacters(page: model?.info.next) { [weak self] result in
+        networkService.nextCharacters(page: model?.info.next) { [weak self] result in
             switch result {
             case .failure(let error):
                 print(error.localizedDescription)
@@ -65,6 +85,18 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
         }
     }
     
+    
+    func tableWasScrolled() {
+        OperationQueue.main.addOperation { [weak self] in
+            self?.view.showGoToTop()
+        }
+    }
+    
+    func goToTopTapped() {
+        OperationQueue.main.addOperation { [weak self] in
+            self?.view.scrollTableToTop()
+        }
+    }
     
     
 }

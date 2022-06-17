@@ -8,7 +8,7 @@
 import UIKit
 import SwiftUI
 
-final class SplashViewController: UIViewController, SplashViewProtocol {
+final class SplashViewController: BaseViewController, SplashViewProtocol {
     
     var presenter: SplashPresenterProtocol!
 

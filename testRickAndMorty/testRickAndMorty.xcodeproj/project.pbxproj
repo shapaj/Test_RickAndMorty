@@ -62,14 +62,19 @@
 		CA6F545528466615002093C4 /* SplashViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F545428466615002093C4 /* SplashViewProtocol.swift */; };
 		CA6F54572846675F002093C4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F54562846675F002093C4 /* Colors.swift */; };
 		CA6F54592846695B002093C4 /* UIViewController+Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F54582846695B002093C4 /* UIViewController+Portal.swift */; };
-		CA6F547B28476F35002093C4 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CA6F547A28476F35002093C4 /* SnapKit */; };
-		CA6F547E28476F5A002093C4 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CA6F547D28476F5A002093C4 /* Nuke */; };
+		CA88A3C02857E08200672E5A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3BF2857E08200672E5A /* Nuke */; };
+		CA88A3C32857E09200672E5A /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3C22857E09200672E5A /* SnapKit-Dynamic */; };
+		CA88A3C52858990500672E5A /* AllCharactersViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C42858990500672E5A /* AllCharactersViewController1.swift */; };
+		CA88A3C728589A9400672E5A /* AllCharactersViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C628589A9400672E5A /* AllCharactersViewController2.swift */; };
+		CA88A3C928589AA000672E5A /* AllCharactersViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C828589AA000672E5A /* AllCharactersViewController3.swift */; };
+		CA88A3CB285B88CD00672E5A /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3CA285B88CD00672E5A /* Swipeable.swift */; };
+		CA88A3CD285B8DF000672E5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3CC285B8DF000672E5A /* BaseViewController.swift */; };
+		CA88A3D0285B9C2A00672E5A /* SwipeableTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */; };
+		CA88A3D3285C999000672E5A /* BasicHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */; };
 		CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */; };
 		CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */; };
 		CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F776284DE89600876160 /* CommonNavigationBar.swift */; };
 		CAC1F77A284E362F00876160 /* CharacterEpisodesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F779284E362F00876160 /* CharacterEpisodesCell.swift */; };
-		CAC1F77D284E7E9F00876160 /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77C284E7E9F00876160 /* Nuke */; };
-		CAC1F780284E7EAF00876160 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = CAC1F77F284E7EAF00876160 /* SnapKit */; };
 		CAC1F782284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F781284E88A400876160 /* CharacterDetalInfoSectionViewModel.swift */; };
 		CAC1F784284E894400876160 /* CharacterDetalInfoCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F783284E894400876160 /* CharacterDetalInfoCellViewModel.swift */; };
 		CAC1F787284F2C6300876160 /* UpToDatable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F786284F2C6300876160 /* UpToDatable.swift */; };
@@ -138,6 +143,12 @@
 		CA6F545428466615002093C4 /* SplashViewProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewProtocol.swift; sourceTree = "<group>"; };
 		CA6F54562846675F002093C4 /* Colors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		CA6F54582846695B002093C4 /* UIViewController+Portal.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Portal.swift"; sourceTree = "<group>"; };
+		CA88A3C42858990500672E5A /* AllCharactersViewController1.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersViewController1.swift; sourceTree = "<group>"; };
+		CA88A3C628589A9400672E5A /* AllCharactersViewController2.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersViewController2.swift; sourceTree = "<group>"; };
+		CA88A3C828589AA000672E5A /* AllCharactersViewController3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AllCharactersViewController3.swift; sourceTree = "<group>"; };
+		CA88A3CA285B88CD00672E5A /* Swipeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipeable.swift; sourceTree = "<group>"; };
+		CA88A3CC285B8DF000672E5A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicHomeViewController.swift; sourceTree = "<group>"; };
 		CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoSection.swift; sourceTree = "<group>"; };
 		CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCell.swift; sourceTree = "<group>"; };
 		CAC1F776284DE89600876160 /* CommonNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationBar.swift; sourceTree = "<group>"; };
@@ -157,10 +168,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CAC1F77D284E7E9F00876160 /* Nuke in Frameworks */,
-				CAC1F780284E7EAF00876160 /* SnapKit in Frameworks */,
-				CA6F547B28476F35002093C4 /* SnapKit in Frameworks */,
-				CA6F547E28476F5A002093C4 /* Nuke in Frameworks */,
+				CA88A3C02857E08200672E5A /* Nuke in Frameworks */,
+				CA88A3D0285B9C2A00672E5A /* SwipeableTabBarController in Frameworks */,
+				CA88A3C32857E09200672E5A /* SnapKit-Dynamic in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -172,6 +182,7 @@
 			children = (
 				CA6F53B22844AB3C002093C4 /* testRickAndMorty */,
 				CA6F53B12844AB3C002093C4 /* Products */,
+				CA88A3BD2857DF3600672E5A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -204,6 +215,7 @@
 		CA6F53C72844AE03002093C4 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				CA88A3D1285C995400672E5A /* BasicHomeViewController */,
 				CA6F540D28461BA2002093C4 /* Locations */,
 				CAC1F791284FE45600876160 /* Episode */,
 				CA6F54062846157C002093C4 /* Episodes */,
@@ -231,6 +243,9 @@
 				CA6F53CA2844AEAF002093C4 /* AllCharactersViewController.swift */,
 				CA6F5441284654F7002093C4 /* AllCharactersViewProtocol.swift */,
 				CA6F543F284654CF002093C4 /* AllCharactersRouterProtocol.swift */,
+				CA88A3C42858990500672E5A /* AllCharactersViewController1.swift */,
+				CA88A3C628589A9400672E5A /* AllCharactersViewController2.swift */,
+				CA88A3C828589AA000672E5A /* AllCharactersViewController3.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -347,6 +362,7 @@
 				CA6F53ED2844F9C0002093C4 /* Endpoint.swift */,
 				CA6F54432846563E002093C4 /* InterfaceStrings.swift */,
 				CAC1F78F284F34B300876160 /* TagsLayout.swift */,
+				CA88A3CC285B8DF000672E5A /* BaseViewController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -558,6 +574,21 @@
 			path = Extentions;
 			sourceTree = "<group>";
 		};
+		CA88A3BD2857DF3600672E5A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CA88A3D1285C995400672E5A /* BasicHomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */,
+			);
+			path = BasicHomeViewController;
+			sourceTree = "<group>";
+		};
 		CAC1F76F284A76CE00876160 /* CharacterDetalInfoSection */ = {
 			isa = PBXGroup;
 			children = (
@@ -596,6 +627,7 @@
 			isa = PBXGroup;
 			children = (
 				CAC1F786284F2C6300876160 /* UpToDatable.swift */,
+				CA88A3CA285B88CD00672E5A /* Swipeable.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -651,10 +683,9 @@
 			);
 			name = testRickAndMorty;
 			packageProductDependencies = (
-				CA6F547A28476F35002093C4 /* SnapKit */,
-				CA6F547D28476F5A002093C4 /* Nuke */,
-				CAC1F77C284E7E9F00876160 /* Nuke */,
-				CAC1F77F284E7EAF00876160 /* SnapKit */,
+				CA88A3BF2857E08200672E5A /* Nuke */,
+				CA88A3C22857E09200672E5A /* SnapKit-Dynamic */,
+				CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */,
 			);
 			productName = testRickAndMorty;
 			productReference = CA6F53B02844AB3C002093C4 /* testRickAndMorty.app */;
@@ -685,10 +716,9 @@
 			);
 			mainGroup = CA6F53A72844AB3C002093C4;
 			packageReferences = (
-				CA6F547928476F35002093C4 /* XCRemoteSwiftPackageReference "SnapKit" */,
-				CA6F547C28476F5A002093C4 /* XCRemoteSwiftPackageReference "Nuke" */,
-				CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */,
-				CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */,
+				CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */,
+				CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */,
 			);
 			productRefGroup = CA6F53B12844AB3C002093C4 /* Products */;
 			projectDirPath = "";
@@ -719,12 +749,14 @@
 			buildActionMask = 2147483647;
 			files = (
 				CA6F542728462C28002093C4 /* LocationsViewModel.swift in Sources */,
+				CA88A3C728589A9400672E5A /* AllCharactersViewController2.swift in Sources */,
 				CAC1F797284FE4B500876160 /* EpisodeViewController.swift in Sources */,
 				CA6F53F828460C19002093C4 /* CharacterViewController.swift in Sources */,
 				CA6F542128462927002093C4 /* LocationsRouterProtocol.swift in Sources */,
 				CAC1F78D284F323400876160 /* TagLabelModel.swift in Sources */,
 				CA6F542E28462E2A002093C4 /* EpisodesAssembly.swift in Sources */,
 				CA6F542C28462CF3002093C4 /* EpisodesModel.swift in Sources */,
+				CA88A3C928589AA000672E5A /* AllCharactersViewController3.swift in Sources */,
 				CA6F53FC28460C85002093C4 /* CharacterRouterProtocol.swift in Sources */,
 				CA6F541928462392002093C4 /* LocationsViewContrioller.swift in Sources */,
 				CA6F541B284623BA002093C4 /* LocationsViewProtocol.swift in Sources */,
@@ -748,17 +780,21 @@
 				CA6F53FE28460CA7002093C4 /* CharacterPresenter.swift in Sources */,
 				CA6F544B284663AD002093C4 /* SplashViewAssembly.swift in Sources */,
 				CA6F541728461E80002093C4 /* LocationsAssembly.swift in Sources */,
+				CA88A3C52858990500672E5A /* AllCharactersViewController1.swift in Sources */,
 				CA6F53E92844E107002093C4 /* NetworkManager.swift in Sources */,
 				CA6F54052846139E002093C4 /* AllCharactersAssemply.swift in Sources */,
 				CA6F542A28462C94002093C4 /* EpisodesNetworkService.swift in Sources */,
 				CA6F541D28462817002093C4 /* LocationNetworkService.swift in Sources */,
+				CA88A3D3285C999000672E5A /* BasicHomeViewController.swift in Sources */,
 				CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */,
 				CA6F543228462E59002093C4 /* EpisodesViewController.swift in Sources */,
 				CAC1F78E284F323400876160 /* TagViewLabel.swift in Sources */,
 				CA6F541F28462840002093C4 /* LocationModel.swift in Sources */,
+				CA88A3CD285B8DF000672E5A /* BaseViewController.swift in Sources */,
 				CA6F54572846675F002093C4 /* Colors.swift in Sources */,
 				CA6F544628465BF1002093C4 /* Images.swift in Sources */,
 				CA6F53B42844AB3C002093C4 /* AppDelegate.swift in Sources */,
+				CA88A3CB285B88CD00672E5A /* Swipeable.swift in Sources */,
 				CAC1F784284E894400876160 /* CharacterDetalInfoCellViewModel.swift in Sources */,
 				CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */,
 				CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */,
@@ -1004,23 +1040,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		CA6F547928476F35002093C4 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
-			};
-		};
-		CA6F547C28476F5A002093C4 /* XCRemoteSwiftPackageReference "Nuke" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/Nuke.git";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 9.0.0;
-			};
-		};
-		CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */ = {
+		CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/kean/Nuke.git";
 			requirement = {
@@ -1028,7 +1048,7 @@
 				kind = branch;
 			};
 		};
-		CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+		CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
 			requirement = {
@@ -1036,28 +1056,31 @@
 				kind = branch;
 			};
 		};
+		CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marcosgriselli/SwipeableTabBarController";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		CA6F547A28476F35002093C4 /* SnapKit */ = {
+		CA88A3BF2857E08200672E5A /* Nuke */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CA6F547928476F35002093C4 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
-		};
-		CA6F547D28476F5A002093C4 /* Nuke */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA6F547C28476F5A002093C4 /* XCRemoteSwiftPackageReference "Nuke" */;
+			package = CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */;
 			productName = Nuke;
 		};
-		CAC1F77C284E7E9F00876160 /* Nuke */ = {
+		CA88A3C22857E09200672E5A /* SnapKit-Dynamic */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CAC1F77B284E7E9F00876160 /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = Nuke;
+			package = CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = "SnapKit-Dynamic";
 		};
-		CAC1F77F284E7EAF00876160 /* SnapKit */ = {
+		CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = CAC1F77E284E7EAF00876160 /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = SnapKit;
+			package = CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */;
+			productName = SwipeableTabBarController;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

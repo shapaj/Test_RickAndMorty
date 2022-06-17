@@ -33,14 +33,25 @@ struct CharactersModel: Codable {
             next = try? container.decode(String.self, forKey: .next)
             prev = try? container.decode(String.self, forKey: .prev)
         }
+        
+        fileprivate init() {
+            count = 0
+            pages = 0
+        }
     }
     
     mutating func ubdateModel(with newModel: CharactersModel) {
         results.append(contentsOf: newModel.results)
         info = newModel.info
+    }
+    
+    private init() {
+        info = CharactersInfo()
+        results = []
         
-        
-        
+    }
+    static func nilObject() -> CharactersModel {
+        return CharactersModel()
     }
 }
 

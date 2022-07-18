@@ -8,7 +8,8 @@
 import UIKit
 import Nuke
 
-class CharacterViewCell: UITableViewCell {
+
+class CharacterViewCell: UITableViewCell, UpToDatable {
 
     private var imageURL: URL?
     private var photo: UIImageView = UIImageView()
@@ -87,8 +88,8 @@ class CharacterViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
     }
     
-    func updareInterface(data: Any) {
-        if let viewModel = data as? CharacterCellViewModel {
+    func updateInterface(_ model: Any) {
+        if let viewModel = model as? CharacterCellViewModel {
             imageURL = viewModel.imageURL
             name.text = viewModel.name
             episodes.text = viewModel.episodes

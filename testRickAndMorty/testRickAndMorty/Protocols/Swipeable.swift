@@ -40,11 +40,13 @@ class SwipeAnimator: NSObject, UIViewControllerAnimatedTransitioning {
         
         guard let fromVC = transitionContext.viewController(forKey: .from),
               let toVC = transitionContext.viewController(forKey: .to)//,
+        
 //              let snapshotFrom = fromVC.view.snapshotView(afterScreenUpdates: true),
 //              let snapshotTo = toVC.view.snapshotView(afterScreenUpdates: true)
         else {
                   return
               }
+        print(toVC)
         
         fromVC.showPortal()
         sleep(3)

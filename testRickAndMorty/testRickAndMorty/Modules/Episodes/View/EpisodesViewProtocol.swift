@@ -8,5 +8,5 @@
 import UIKit
 
 protocol EpisodesViewProtocol: UIViewController, EpisodeaRouterProtocol {
-    
+    func scrollTableToTop()
 }

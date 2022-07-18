@@ -38,7 +38,7 @@ final class AllCharactersPresenter: AllCharactersPresenterProtocol {
     func getCharacters(name: String?) {
         guard let name = name else { return }
         
-        networkService.getCharacters(queryItems: ["name": name]) { [weak self] result in
+        networkService.fetchCharacters(queryItems: ["name": name]) { [weak self] result in
             guard let self = self else { return }
             
             switch result {

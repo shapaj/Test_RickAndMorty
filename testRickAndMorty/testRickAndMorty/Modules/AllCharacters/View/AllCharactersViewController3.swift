@@ -19,43 +19,19 @@ final class AllCharactersViewController3: BaseViewController, AllCharactersViewP
     private var tableView: UITableView = UITableView()
     let tableHeaderView = UIView()
     
+    
+    var aaa: UIBarButtonItem?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        aaa = UIBarButtonItem(title: "filter", style: .plain, target: self, action: #selector(filterTaped))
         presenter.viewDidLoad()
         setupUI()
         view.backgroundColor = Colors.background
         
         
-//        let leftToRightGesture = UISwipeGestureRecognizer(target: self, action: #selector(leftToRightSwipeDidFire))
-//        leftToRightGesture.direction = .left
-////        self.tabBarController?.tabBar
-//        self.view.addGestureRecognizer(leftToRightGesture)
-
-//            UISwipeGestureRecognizer *rightToLeftGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(rightToLeftSwipeDidFire)];
-//            rightToLeftGesture.direction = UISwipeGestureRecognizerDirectionLeft;
-//            [self.tabBarController.tabBar addGestureRecognizer:rightToLeftGesture];
     }
     
-//    @objc func leftToRightSwipeDidFire() {
-//        guard let tabBar: UITabBar = self.tabBarController?.tabBar,
-//            let selectedItem = tabBar.selectedItem,
-//              let index = tabBar.items?.index(of: selectedItem)
-//        else { return }
-//
-//                //indexOfObject:tabBar.selectedItem];
-//        if index == 0 {
-//            navigationController?.transitioningDelegate = self
-//            tabBarController?.transition(from: T##UIViewController, to: T##UIViewController, duration: T##TimeInterval, animations: T##(() -> Void)?##(() -> Void)?##() -> Void)
-//                self.tabBarController?.transitioningDelegate = self
-//            self.tabBarController?.tabBar.deleg
-//                self.tabBarController?.selectedIndex = index + 1
-////            UIView.animate(withDuration: 5) {
-////            }
-//
-//        } else {
-//            return
-//        }
-//    }
     override func viewWillAppear(_ animated: Bool) { }
     
     private func setupUI() {
@@ -192,9 +168,9 @@ final class AllCharactersViewController3: BaseViewController, AllCharactersViewP
 
 extension AllCharactersViewController3: UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate {
     
-    override var prefersStatusBarHidden: Bool {
-        true
-    }
+//    override var prefersStatusBarHidden: Bool {
+//        true
+//    }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return viewModel?.characterCells.count ?? 0
@@ -223,7 +199,7 @@ extension AllCharactersViewController3: UITableViewDelegate, UITableViewDataSour
         }
         goTopView.isHidden = indexPath.row < 20
         
-        cell.updareInterface(data: cellmodel)
+        cell.updateInterface(cellmodel)
         
         return cell
     }

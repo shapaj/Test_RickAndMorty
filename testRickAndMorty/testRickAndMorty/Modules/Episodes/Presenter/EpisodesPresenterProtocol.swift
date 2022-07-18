@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol EpisodesPresenterProtocol {
-    
+protocol EpisodesPresenterProtocol: ScrollableToTop {
+    func viewDidLoad()
 }

@@ -8,10 +8,27 @@
 import Foundation
 
 protocol EpisodesNetworkServiceProtocol {
+    func fetchEpisodes(queryItems: [String: String]?, complition: @escaping (Result<CharactersModel, Error>) -> ())
+    
+    
     func getEpisodes(character: Character, completionHandler: @escaping (Result<[Episode], Error>) -> ())
+    
+    func nextEpisodes(page: String?, complition: @escaping (Result<CharactersModel, Error>) -> ())
+    
+    
 }
 
 struct EpisodesNetworkService: EpisodesNetworkServiceProtocol {
+    
+    func fetchEpisodes(queryItems: [String : String]?, complition: @escaping (Result<CharactersModel, Error>) -> ()) {
+        
+    }
+    
+    func nextEpisodes(page: String?, complition: @escaping (Result<CharactersModel, Error>) -> ()) {
+        
+    }
+    
+   
     
     func getEpisodes(character: Character, completionHandler: @escaping (Result<[Episode], Error>) -> ()) {
         
@@ -20,9 +37,4 @@ struct EpisodesNetworkService: EpisodesNetworkServiceProtocol {
                                        parametres: nil,
                                        completionHandler: completionHandler)
     }
-
-    
-    
-    
-    
 }

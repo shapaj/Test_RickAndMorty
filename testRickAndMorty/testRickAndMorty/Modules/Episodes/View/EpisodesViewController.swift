@@ -7,21 +7,47 @@
 
 import UIKit
 
-
-final class EpisodesViewController: BaseViewController, EpisodesViewProtocol {
+final class EpisodesViewController: BasicHomeViewController<EpisodeViewCell>, EpisodesViewProtocol {
     
     var viewModel: EpisodesViewModel?
-    private var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 44))
-    let imageView = UIImageView()
-    private var goTopView: UIImageView = UIImageView()
-    private var tableView: UITableView = UITableView()
-    let tableHeaderView = UIView()
+    var tableController: BasicTableController<EpisodeViewCell>?
     
-    var presenter: EpisodesPresenterProtocol!
+    private var searchBar = UISearchBar(frame: CGRect(x: 0, y: 0, width: 300, height: 44))
+    
+    var presenter: EpisodesPresenterProtocol?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = Colors.background
+        setupTable()
+        presenter?.viewDidLoad()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
+    }
+    
+    private func setupTable() {
+        tableController = BasicTableController<EpisodeViewCell>(view: self)
+        tableView.delegate = tableController
+        tableView.dataSource = tableController
+    }
+    
+    override func tapGoTopView(_ sender: UITapGestureRecognizer) {
+        presenter?.goToTopTapped()
+    }
+    
+    override func tableViewDidSelectRowAt(indexPath: IndexPath) {
+        super.tableViewDidSelectRowAt(indexPath: indexPath)
+    }
+    
+    override func getNextPage() {
+        super.getNextPage()
+    }
+    
+    override func scrolledTop(isHidden: Bool) {
+        super.scrolledTop(isHidden: isHidden)
     }
     
 }
+
+

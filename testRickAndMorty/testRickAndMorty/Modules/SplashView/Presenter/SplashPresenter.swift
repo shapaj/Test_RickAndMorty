@@ -20,7 +20,7 @@ final class SplashPresenter: SplashPresenterProtocol {
     
     func getCharacters() {
         
-        networkService.getCharacters(queryItems: nil) { [weak self] result in
+        networkService.fetchCharacters(queryItems: nil) { [weak self] result in
             
             defer {
                 OperationQueue.main.addOperation { self?.view.hidePortal() }

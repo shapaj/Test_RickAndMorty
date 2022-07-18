@@ -226,7 +226,7 @@ extension AllCharactersViewController1: UITableViewDelegate, UITableViewDataSour
         }
         goTopView.isHidden = indexPath.row < 20
         
-        cell.updareInterface(data: cellmodel)
+        cell.updateInterface(cellmodel)
         
         return cell
     }

@@ -7,6 +7,6 @@
 
 import UIKit
 
-protocol EpisodesViewProtocol: UIViewController, EpisodeaRouterProtocol {
+protocol EpisodesViewProtocol: UIViewController, EpisodeaRouterProtocol, InterfaceUpdatable {
     func scrollTableToTop()
 }

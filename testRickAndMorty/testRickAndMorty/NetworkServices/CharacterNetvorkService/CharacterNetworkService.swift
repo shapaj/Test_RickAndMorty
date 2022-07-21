@@ -8,12 +8,17 @@
 import Foundation
 
 protocol CharacterNetworkServiceProtocol {
+    /// First page characters
+    /// queryItems using for search exemple ["name" : Rick]
     func fetchCharacters(queryItems: [String: String]?, complition: @escaping (Result<CharactersModel, Error>) -> ())
     
+    /// First page characters by episode
     func getCharacters(episode: Episode, completionHandler: @escaping (Result<[Character], Error>) -> ())
     
+    /// Next page characters by last feched model url
     func nextCharacters(page: String?, complition: @escaping (Result<CharactersModel, Error>) -> ())
     
+    /// Any Image by URL
     func getCharacterImage(by url: URL, complitionHandler: @escaping (Data) -> Void)
 }
 
@@ -40,7 +45,6 @@ struct CharacterNetworkService: CharacterNetworkServiceProtocol {
     }
     
     func getCharacterImage(by url: URL, complitionHandler: @escaping (Data) -> Void) {
-        
         NetworkManager.shared.getImage(by: url, complitionHandler: complitionHandler)
     }
 }

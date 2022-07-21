@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CharacterDetalInfoSection: UITableViewHeaderFooterView, UpToDatable {
+class CharacterDetalInfoSection: UITableViewHeaderFooterView, InterfaceUpdatable {
     
     let label = UILabel()
     let icon = UIImageView()
@@ -56,7 +56,7 @@ class CharacterDetalInfoSection: UITableViewHeaderFooterView, UpToDatable {
         icon.image = Images.portal
     }
     
-    func updateInterface(_ model: Any) {
+    func updateInterface(viewModel model: Any) {
         if let model = model as? CharacterDetalInfoSectionViewModel {
             icon.image = model.type.getIcon()
             label.text = model.type.rawValue

@@ -9,7 +9,7 @@ import UIKit
 import Nuke
 
 
-class EpisodeViewCell: UITableViewCell, UpToDatable {
+class EpisodeViewCell: UITableViewCell, InterfaceUpdatable {
    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
@@ -20,10 +20,14 @@ class EpisodeViewCell: UITableViewCell, UpToDatable {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func updateInterface(_ model: Any) {
-        print(model)
-    }
     
+//    func updateInterface(_ model: Any) {
+//        print(model)
+//    }
+   
+    func updateInterface(viewModel: Any) {
+        print(viewModel)
+    }
     
     
 }

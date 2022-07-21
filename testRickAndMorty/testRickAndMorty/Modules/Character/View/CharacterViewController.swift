@@ -161,7 +161,7 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         guard let header = tableView.dequeueReusableHeaderFooterView(withIdentifier: "CharacterDetalInfoSection") as? CharacterDetalInfoSection else { return nil }
         
-        header.updateInterface(sections[section])
+        header.updateInterface(viewModel: sections[section])
         return header
     }
     
@@ -190,7 +190,7 @@ extension CharacterViewController: UITableViewDelegate, UITableViewDataSource {
         } else {
             guard let cell = tableView.dequeueReusableCell(withIdentifier: "CharacterDetalInfoCell") as? CharacterDetalInfoCell else { return UITableViewCell() }
             
-            cell.updateInterface(sections[indexPath.section].cells[indexPath.row])
+            cell.updateInterface(viewModel: sections[indexPath.section].cells[indexPath.row])
             return cell
         }
     }

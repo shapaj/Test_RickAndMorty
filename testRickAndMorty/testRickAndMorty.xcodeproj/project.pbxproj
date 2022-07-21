@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CA42C88B2886015B00CD7A40 /* EpisodeCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA42C88A2886015B00CD7A40 /* EpisodeCellViewModel.swift */; };
 		CA565D5A286E45D70045D46A /* ScrollableToTop.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA565D59286E45D70045D46A /* ScrollableToTop.swift */; };
 		CA565D5C2874DD930045D46A /* UIView+Identifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA565D5B2874DD920045D46A /* UIView+Identifier.swift */; };
 		CA565D5F2874DE4B0045D46A /* EpisodeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA565D5E2874DE4B0045D46A /* EpisodeCell.swift */; };
@@ -90,6 +91,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		CA42C88A2886015B00CD7A40 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
 		CA565D59286E45D70045D46A /* ScrollableToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableToTop.swift; sourceTree = "<group>"; };
 		CA565D5B2874DD920045D46A /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
 		CA565D5E2874DE4B0045D46A /* EpisodeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCell.swift; sourceTree = "<group>"; };
@@ -189,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				CA565D5E2874DE4B0045D46A /* EpisodeCell.swift */,
+				CA42C88A2886015B00CD7A40 /* EpisodeCellViewModel.swift */,
 			);
 			path = EpisodeViewCell;
 			sourceTree = "<group>";
@@ -826,6 +829,7 @@
 				CA6F53EB2844E121002093C4 /* NavigationManager.swift in Sources */,
 				CA6F53F628460958002093C4 /* CharacterAssembly.swift in Sources */,
 				CA6F545328466601002093C4 /* SplashRouterProtocol.swift in Sources */,
+				CA42C88B2886015B00CD7A40 /* EpisodeCellViewModel.swift in Sources */,
 				CA6F543A28462EAC002093C4 /* EpisodesPresenterProtocol.swift in Sources */,
 				CA6F543E284654B5002093C4 /* AllCharactersPresenterProtocol.swift in Sources */,
 				CA6F543628462E86002093C4 /* EpisodesRoterProtocol.swift in Sources */,

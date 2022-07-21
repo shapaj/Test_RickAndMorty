@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class CharacterDetalInfoCell: UITableViewCell, UpToDatable {
+class CharacterDetalInfoCell: UITableViewCell, InterfaceUpdatable {
     let label = UILabel()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -42,8 +42,8 @@ class CharacterDetalInfoCell: UITableViewCell, UpToDatable {
         label.text = nil
     }
 
-    func updateInterface(_ model: Any) {
-        if let model = model as? CharacterDetalInfoCellViewModel {
+    func updateInterface(viewModel: Any) {
+        if let model = viewModel as? CharacterDetalInfoCellViewModel {
             label.text = model.title
         }
     }

@@ -48,6 +48,11 @@ final class EpisodesViewController: BasicHomeViewController<EpisodeViewCell>, Ep
         super.scrolledTop(isHidden: isHidden)
     }
     
+    func updateInterface(viewModel: Any) {
+        guard let episodes = viewModel as? EpisodesViewModel else { return }
+        tableController?.viewModel = episodes.episodeCells
+        tableView.reloadData()
+    }
 }
 
 

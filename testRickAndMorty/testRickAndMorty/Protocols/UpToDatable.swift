@@ -6,13 +6,7 @@
 //
 
 import Foundation
-import UIKit
-
-protocol UpToDatable where Self: UIView {
-    func updateInterface(_ model: Any)
-}
-
 
 protocol InterfaceUpdatable {
-    func updareInterface(data: Any)
+    func updateInterface(viewModel: Any)
 }

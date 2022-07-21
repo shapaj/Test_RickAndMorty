@@ -84,7 +84,7 @@ class BasicHomeViewController<T>: BaseViewController where T: UITableViewCell{
 }
 
 
-class BasicTableController<T>: NSObject, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate where T:UITableViewCell, T:UpToDatable {
+class BasicTableController<T>: NSObject, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate where T:UITableViewCell, T:InterfaceUpdatable {
     
     private weak var view: BasicHomeViewController<T>?
     var viewModel: [Any] = []
@@ -119,7 +119,7 @@ class BasicTableController<T>: NSObject, UITableViewDelegate, UITableViewDataSou
         
         view?.scrolledTop(isHidden: indexPath.row < 20)
         
-        cell.updateInterface(viewModel[indexPath.row])
+        cell.updateInterface(viewModel: viewModel[indexPath.row])
         
         return cell
     }

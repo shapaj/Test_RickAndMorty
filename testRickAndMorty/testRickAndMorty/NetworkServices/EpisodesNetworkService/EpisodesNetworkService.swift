@@ -12,6 +12,9 @@ protocol EpisodesNetworkServiceProtocol {
     /// queryItems using for search exemple ["name" : Rick]
     func fetchEpisodes(queryItems: [String: String]?, complition: @escaping (Result<EpisodesModel, Error>) -> ())
     
+    /// First page characters by episode
+    func getCharacters(episode: Episode, completionHandler: @escaping (Result<[Character], Error>) -> ())
+    
     /// First page characters by episodes
     func getEpisodes(character: Character, completionHandler: @escaping (Result<[Episode], Error>) -> ())
     
@@ -34,7 +37,12 @@ struct EpisodesNetworkService: EpisodesNetworkServiceProtocol {
         NetworkManager.shared.getModel(url: url, headers: nil, parametres: nil, completionHandler: complition)
     }
     
-   
+    func getCharacters(episode: Episode, completionHandler: @escaping (Result<[Character], Error>) -> ()) {
+        NetworkManager.shared.getModel(url: Endpoint.character.getURL(urlPaths: [Endpoint.getCharacters(episode: episode)], queryItems: nil),
+                                       headers: nil,
+                                       parametres: nil,
+                                       completionHandler: completionHandler)
+    }
     
     func getEpisodes(character: Character, completionHandler: @escaping (Result<[Episode], Error>) -> ()) {
         

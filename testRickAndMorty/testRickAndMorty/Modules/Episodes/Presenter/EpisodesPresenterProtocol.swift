@@ -9,4 +9,5 @@ import Foundation
 
 protocol EpisodesPresenterProtocol: ScrollableToTop {
     func viewDidLoad()
+    func cellTaped(indexPath: IndexPath)
 }

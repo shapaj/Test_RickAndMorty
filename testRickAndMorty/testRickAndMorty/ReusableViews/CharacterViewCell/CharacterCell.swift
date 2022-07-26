@@ -8,9 +8,10 @@
 import UIKit
 import Nuke
 
+class CharacterViewCell: UITableViewCell, BasicTableCell {
 
-class CharacterViewCell: UITableViewCell, InterfaceUpdatable {
-
+    var handler: (() -> Void)?
+    static var height: CGFloat = CGFloat(80)
     private var imageURL: URL?
     private var photo: UIImageView = UIImageView()
     private var name: UILabel = UILabel()

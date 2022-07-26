@@ -8,7 +8,7 @@
 import UIKit
 
 extension UIViewController {
-    func showPortal(){
+    func showPortal() {
         
         let portalHight = min(self.view.bounds.size.height, self.view.bounds.size.width)
         

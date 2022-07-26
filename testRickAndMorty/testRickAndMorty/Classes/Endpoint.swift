@@ -33,4 +33,13 @@ enum Endpoint: String {
         
         
     }
+    
+    static func getCharacters(episode: Episode) -> String {
+      
+        return episode.characters.map {
+             $0.replacingOccurrences(of: "https://rickandmortyapi.com/api/character/", with: "")
+        } .joined(separator: ",") + ","
+        
+        
+    }
 }

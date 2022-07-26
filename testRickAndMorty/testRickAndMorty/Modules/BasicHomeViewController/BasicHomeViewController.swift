@@ -72,7 +72,9 @@ class BasicHomeViewController<T>: BaseViewController where T: UITableViewCell{
         //presenter?.goToTopTapped()
     }
     func tableViewDidSelectRowAt(indexPath: IndexPath) {}
-    func getNextPage() {}
+    
+    func getNextPage() { }
+    
     func scrolledTop(isHidden: Bool) {
         goTopView.isHidden = isHidden
     }
@@ -81,49 +83,8 @@ class BasicHomeViewController<T>: BaseViewController where T: UITableViewCell{
         tableView.setContentOffset(CGPoint(x: 0, y: 0), animated: true)
         goTopView.isHidden = true
     }
-}
-
-
-class BasicTableController<T>: NSObject, UITableViewDelegate, UITableViewDataSource, UIScrollViewDelegate where T:UITableViewCell, T:InterfaceUpdatable {
     
-    private weak var view: BasicHomeViewController<T>?
-    var viewModel: [Any] = []
-    
-    init(view: BasicHomeViewController<T>) {
-        super.init()
-        self.view = view
-    }
-    public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 40//viewModel.count
-    }
-    
-    public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return CGFloat(80)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        1
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.cellForRow(at: indexPath)?.isSelected = false
-        view?.tableViewDidSelectRowAt(indexPath: indexPath)
-    }
-    
-    public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: String(describing: T.self)) as? T else { return UITableViewCell() }
+    func cellTaped(indexPath: IndexPath) {
         
-        if indexPath.row + 2 == viewModel.count {
-            view?.getNextPage()
-        }
-        
-        view?.scrolledTop(isHidden: indexPath.row < 20)
-        
-        cell.updateInterface(viewModel: viewModel[indexPath.row])
-        
-        return cell
     }
-    
-    func scrollViewDidScroll(_ scrollView: UIScrollView) {    }
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {    }
 }

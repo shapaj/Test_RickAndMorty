@@ -30,6 +30,7 @@ final class EpisodesViewController: BasicHomeViewController<EpisodeViewCell>, Ep
         tableController = BasicTableController<EpisodeViewCell>(view: self)
         tableView.delegate = tableController
         tableView.dataSource = tableController
+        tableView.register(EpisodeViewCell.self, forCellReuseIdentifier: EpisodeViewCell.getIdentifier())
     }
     
     override func tapGoTopView(_ sender: UITapGestureRecognizer) {
@@ -44,14 +45,36 @@ final class EpisodesViewController: BasicHomeViewController<EpisodeViewCell>, Ep
         super.getNextPage()
     }
     
+    override func cellTaped(indexPath: IndexPath) {
+        presenter?.cellTaped(indexPath: indexPath)
+    }
+    
     override func scrolledTop(isHidden: Bool) {
         super.scrolledTop(isHidden: isHidden)
     }
     
     func updateInterface(viewModel: Any) {
-        guard let episodes = viewModel as? EpisodesViewModel else { return }
-        tableController?.viewModel = episodes.episodeCells
-        tableView.reloadData()
+        if let episodes = viewModel as? EpisodesViewModel {
+            tableController?.viewModel = episodes.episodeCells
+            tableView.reloadData()
+        } else if  let indexPath = viewModel as? IndexPath {
+            
+            if let tableDelegate = tableView.delegate as? BasicTableController<EpisodeViewCell> {
+                tableDelegate.stretchableCellIndexPath = indexPath
+//                tableView.increaseSize(Any?)
+                tableView.beginUpdates()
+                tableView.endUpdates()
+//                tableView.deleteRows(at: [indexPath], with: .none)
+            //tableView.insertRows(at: [indexPath], with: .none)
+//                tableView.reloadData()
+                tableView.scrollToRow(at: indexPath, at: .top, animated: true)
+            }
+        } else {
+            print("error model")
+        }
+        
+        
+        
     }
 }
 

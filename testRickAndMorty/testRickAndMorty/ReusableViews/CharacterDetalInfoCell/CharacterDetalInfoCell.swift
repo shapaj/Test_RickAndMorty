@@ -11,6 +11,7 @@ import SnapKit
 class CharacterDetalInfoCell: UITableViewCell, InterfaceUpdatable {
     let label = UILabel()
     
+    let height: CGFloat = CGFloat(80)
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         setup()

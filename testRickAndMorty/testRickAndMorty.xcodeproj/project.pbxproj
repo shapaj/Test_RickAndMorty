@@ -76,6 +76,7 @@
 		CA88A3CD285B8DF000672E5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3CC285B8DF000672E5A /* BaseViewController.swift */; };
 		CA88A3D0285B9C2A00672E5A /* SwipeableTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */; };
 		CA88A3D3285C999000672E5A /* BasicHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */; };
+		CA8965A2288AEAEC007FFA85 /* BasicTableController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA8965A1288AEAEC007FFA85 /* BasicTableController.swift */; };
 		CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */; };
 		CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */; };
 		CAC1F777284DE89600876160 /* CommonNavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F776284DE89600876160 /* CommonNavigationBar.swift */; };
@@ -159,6 +160,7 @@
 		CA88A3CA285B88CD00672E5A /* Swipeable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Swipeable.swift; sourceTree = "<group>"; };
 		CA88A3CC285B8DF000672E5A /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicHomeViewController.swift; sourceTree = "<group>"; };
+		CA8965A1288AEAEC007FFA85 /* BasicTableController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicTableController.swift; sourceTree = "<group>"; };
 		CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoSection.swift; sourceTree = "<group>"; };
 		CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterDetalInfoCell.swift; sourceTree = "<group>"; };
 		CAC1F776284DE89600876160 /* CommonNavigationBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonNavigationBar.swift; sourceTree = "<group>"; };
@@ -384,6 +386,7 @@
 				CA6F54432846563E002093C4 /* InterfaceStrings.swift */,
 				CAC1F78F284F34B300876160 /* TagsLayout.swift */,
 				CA88A3CC285B8DF000672E5A /* BaseViewController.swift */,
+				CA8965A1288AEAEC007FFA85 /* BasicTableController.swift */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -835,6 +838,7 @@
 				CA6F543628462E86002093C4 /* EpisodesRoterProtocol.swift in Sources */,
 				CA6F540228460E0B002093C4 /* CharacterViewModel.swift in Sources */,
 				CA6F543028462E42002093C4 /* EpisodesViewModel.swift in Sources */,
+				CA8965A2288AEAEC007FFA85 /* BasicTableController.swift in Sources */,
 				CA6F53E02844DEB3002093C4 /* CharactersModel.swift in Sources */,
 				CAC1F790284F34B300876160 /* TagsLayout.swift in Sources */,
 				CA6F5451284665EF002093C4 /* SplashViewController.swift in Sources */,

@@ -67,14 +67,11 @@
 		CA6F545528466615002093C4 /* SplashViewProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F545428466615002093C4 /* SplashViewProtocol.swift */; };
 		CA6F54572846675F002093C4 /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F54562846675F002093C4 /* Colors.swift */; };
 		CA6F54592846695B002093C4 /* UIViewController+Portal.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA6F54582846695B002093C4 /* UIViewController+Portal.swift */; };
-		CA88A3C02857E08200672E5A /* Nuke in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3BF2857E08200672E5A /* Nuke */; };
-		CA88A3C32857E09200672E5A /* SnapKit-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3C22857E09200672E5A /* SnapKit-Dynamic */; };
 		CA88A3C52858990500672E5A /* AllCharactersViewController1.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C42858990500672E5A /* AllCharactersViewController1.swift */; };
 		CA88A3C728589A9400672E5A /* AllCharactersViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C628589A9400672E5A /* AllCharactersViewController2.swift */; };
 		CA88A3C928589AA000672E5A /* AllCharactersViewController3.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3C828589AA000672E5A /* AllCharactersViewController3.swift */; };
 		CA88A3CB285B88CD00672E5A /* Swipeable.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3CA285B88CD00672E5A /* Swipeable.swift */; };
 		CA88A3CD285B8DF000672E5A /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3CC285B8DF000672E5A /* BaseViewController.swift */; };
-		CA88A3D0285B9C2A00672E5A /* SwipeableTabBarController in Frameworks */ = {isa = PBXBuildFile; productRef = CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */; };
 		CA88A3D3285C999000672E5A /* BasicHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA88A3D2285C999000672E5A /* BasicHomeViewController.swift */; };
 		CAC1F771284A773500876160 /* CharacterDetalInfoSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F770284A773500876160 /* CharacterDetalInfoSection.swift */; };
 		CAC1F774284A77AA00876160 /* CharacterDetalInfoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F773284A77AA00876160 /* CharacterDetalInfoCell.swift */; };
@@ -88,9 +85,12 @@
 		CAC1F790284F34B300876160 /* TagsLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F78F284F34B300876160 /* TagsLayout.swift */; };
 		CAC1F795284FE4A300876160 /* EpisodeAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F794284FE4A300876160 /* EpisodeAssembly.swift */; };
 		CAC1F797284FE4B500876160 /* EpisodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAC1F796284FE4B500876160 /* EpisodeViewController.swift */; };
+		FBD0E03E0A6DE3173350CDFF /* Pods_testRickAndMorty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AAFAE716FF010A628ABE0932 /* Pods_testRickAndMorty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5CB0907FF750E8AC91B17056 /* Pods-testRickAndMorty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testRickAndMorty.debug.xcconfig"; path = "Target Support Files/Pods-testRickAndMorty/Pods-testRickAndMorty.debug.xcconfig"; sourceTree = "<group>"; };
+		AAFAE716FF010A628ABE0932 /* Pods_testRickAndMorty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_testRickAndMorty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA42C88A2886015B00CD7A40 /* EpisodeCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeCellViewModel.swift; sourceTree = "<group>"; };
 		CA565D59286E45D70045D46A /* ScrollableToTop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrollableToTop.swift; sourceTree = "<group>"; };
 		CA565D5B2874DD920045D46A /* UIView+Identifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Identifier.swift"; sourceTree = "<group>"; };
@@ -171,6 +171,7 @@
 		CAC1F78F284F34B300876160 /* TagsLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagsLayout.swift; sourceTree = "<group>"; };
 		CAC1F794284FE4A300876160 /* EpisodeAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeAssembly.swift; sourceTree = "<group>"; };
 		CAC1F796284FE4B500876160 /* EpisodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EpisodeViewController.swift; sourceTree = "<group>"; };
+		D6C2C5CDD82F029DD29FCC3B /* Pods-testRickAndMorty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-testRickAndMorty.release.xcconfig"; path = "Target Support Files/Pods-testRickAndMorty/Pods-testRickAndMorty.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,15 +179,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CA88A3C02857E08200672E5A /* Nuke in Frameworks */,
-				CA88A3D0285B9C2A00672E5A /* SwipeableTabBarController in Frameworks */,
-				CA88A3C32857E09200672E5A /* SnapKit-Dynamic in Frameworks */,
+				FBD0E03E0A6DE3173350CDFF /* Pods_testRickAndMorty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4B7C26731D1549DD37694D93 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				5CB0907FF750E8AC91B17056 /* Pods-testRickAndMorty.debug.xcconfig */,
+				D6C2C5CDD82F029DD29FCC3B /* Pods-testRickAndMorty.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		CA565D5D2874DE1B0045D46A /* EpisodeViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -202,6 +210,7 @@
 				CA6F53B22844AB3C002093C4 /* testRickAndMorty */,
 				CA6F53B12844AB3C002093C4 /* Products */,
 				CA88A3BD2857DF3600672E5A /* Frameworks */,
+				4B7C26731D1549DD37694D93 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -599,6 +608,7 @@
 		CA88A3BD2857DF3600672E5A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				AAFAE716FF010A628ABE0932 /* Pods_testRickAndMorty.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -696,9 +706,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = CA6F53C42844AB3E002093C4 /* Build configuration list for PBXNativeTarget "testRickAndMorty" */;
 			buildPhases = (
+				63073DD43F90AD5B642F8F9C /* [CP] Check Pods Manifest.lock */,
 				CA6F53AC2844AB3C002093C4 /* Sources */,
 				CA6F53AD2844AB3C002093C4 /* Frameworks */,
 				CA6F53AE2844AB3C002093C4 /* Resources */,
+				FCCEDDD521763D353F02CF19 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -706,9 +718,6 @@
 			);
 			name = testRickAndMorty;
 			packageProductDependencies = (
-				CA88A3BF2857E08200672E5A /* Nuke */,
-				CA88A3C22857E09200672E5A /* SnapKit-Dynamic */,
-				CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */,
 			);
 			productName = testRickAndMorty;
 			productReference = CA6F53B02844AB3C002093C4 /* testRickAndMorty.app */;
@@ -739,9 +748,6 @@
 			);
 			mainGroup = CA6F53A72844AB3C002093C4;
 			packageReferences = (
-				CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */,
-				CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */,
-				CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */,
 			);
 			productRefGroup = CA6F53B12844AB3C002093C4 /* Products */;
 			projectDirPath = "";
@@ -765,6 +771,48 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		63073DD43F90AD5B642F8F9C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-testRickAndMorty-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FCCEDDD521763D353F02CF19 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testRickAndMorty/Pods-testRickAndMorty-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-testRickAndMorty/Pods-testRickAndMorty-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-testRickAndMorty/Pods-testRickAndMorty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		CA6F53AC2844AB3C002093C4 /* Sources */ = {
@@ -986,6 +1034,7 @@
 		};
 		CA6F53C52844AB3E002093C4 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5CB0907FF750E8AC91B17056 /* Pods-testRickAndMorty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1017,6 +1066,7 @@
 		};
 		CA6F53C62844AB3E002093C4 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D6C2C5CDD82F029DD29FCC3B /* Pods-testRickAndMorty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -1068,51 +1118,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCRemoteSwiftPackageReference section */
-		CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/kean/Nuke.git";
-			requirement = {
-				branch = master;
-				kind = branch;
-			};
-		};
-		CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
-			requirement = {
-				branch = develop;
-				kind = branch;
-			};
-		};
-		CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/marcosgriselli/SwipeableTabBarController";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 3.0.0;
-			};
-		};
-/* End XCRemoteSwiftPackageReference section */
-
-/* Begin XCSwiftPackageProductDependency section */
-		CA88A3BF2857E08200672E5A /* Nuke */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA88A3BE2857E08200672E5A /* XCRemoteSwiftPackageReference "Nuke" */;
-			productName = Nuke;
-		};
-		CA88A3C22857E09200672E5A /* SnapKit-Dynamic */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA88A3C12857E09200672E5A /* XCRemoteSwiftPackageReference "SnapKit" */;
-			productName = "SnapKit-Dynamic";
-		};
-		CA88A3CF285B9C2A00672E5A /* SwipeableTabBarController */ = {
-			isa = XCSwiftPackageProductDependency;
-			package = CA88A3CE285B9C2A00672E5A /* XCRemoteSwiftPackageReference "SwipeableTabBarController" */;
-			productName = SwipeableTabBarController;
-		};
-/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = CA6F53A82844AB3C002093C4 /* Project object */;
 }
